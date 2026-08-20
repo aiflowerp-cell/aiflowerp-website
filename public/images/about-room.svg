@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 1000" width="800" height="1000">
+  <rect width="800" height="1000" fill="#f3e8d6"/>
+  <rect x="100" y="200" width="600" height="600" rx="12" fill="#dfd7cb" opacity="0.6"/>
+  <text x="400" y="510" font-family="Georgia, serif" font-size="36" fill="#173b3f" text-anchor="middle">About Studio</text>
+</svg>

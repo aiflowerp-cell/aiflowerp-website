@@ -1,69 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+/*
+ * FILE: app/page.js
+ * PURPOSE:
+ * Landing home page route for the website.
+ *
+ * RESPONSIBILITIES:
+ * - Compose top-level sections (Hero, About preview, Services preview, Products preview, Testimonials, Contact)
+ * - Render collection preview grid
+ *
+ * DEPENDENCIES:
+ * - Section components (Hero, AboutSection, ServicesSection, ProductCard, Testimonials, ContactSection)
+ * - UI primitives (Button)
+ * - Central content layer (@/content/siteContent)
+ *
+ * NOTES:
+ * - Editorial copy is supplied via content/siteContent.js.
+ */
+
+import { Hero } from "@/components/sections/Hero";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { ProductCard } from "@/components/sections/ProductCard";
+import { Testimonials } from "@/components/sections/Testimonials";
+import { ContactSection } from "@/components/sections/ContactSection";
+import { Button } from "@/components/ui/Button";
+import { content } from "@/content/siteContent";
 
 export default function Home() {
+  const { productPreview } = content.home;
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.js</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <>
+      <Hero />
+      <AboutSection preview />
+      <ServicesSection preview />
+      <section className="section product-preview">
+        <div className="container">
+          <div className="section-top">
+            <div>
+              <p className="eyebrow">{productPreview.eyebrow}</p>
+              <h2>{productPreview.title}</h2>
+            </div>
+            <Button href="/products" variant="text">
+              {productPreview.ctaText} <span aria-hidden="true">↗</span>
+            </Button>
+          </div>
+          <div className="product-grid">
+            {content.products.map((product) => (
+              <ProductCard key={product.name} product={product} />
+            ))}
+          </div>
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+      <Testimonials />
+      <ContactSection />
+    </>
   );
 }
