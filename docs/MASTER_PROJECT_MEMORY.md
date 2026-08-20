@@ -7,6 +7,9 @@ This document records long-term architectural, design, and governance decisions 
 ---
 
 ## 1. Master Template Governance (Permanent Invariants)
+- **Business Name Preservation:** The Business Name provided in `CLIENT_REQUIREMENT_FORM.xlsx` is the official Business/Brand Name and must be used exactly as provided by the client. Its spelling, capitalization, spacing, punctuation, abbreviation, and wording must not be changed, normalized, stylized, or replaced.
+
+- **Brand Name Color:** If a Business (Brand) Name Color is provided in `CLIENT_REQUIREMENT_FORM.xlsx`, it should be used for the official Business/Brand Name where supported by the existing Master Template architecture. If the client specifies `AI Suggest`, AI may suggest a suitable color.
 - **Reusable Master Template:** `website_master` is the canonical, reusable Master Website Template.
 - **Client Website Generation:** New client websites are to be derived from this template by modifying configuration and content layers, never by rewriting core architecture.
 - **Business Data Separation:** All client-specific business identity, contact numbers, WhatsApp URLs, email, address, operating hours, brand colors, logo path, and map information belong strictly in `config/business.js`.

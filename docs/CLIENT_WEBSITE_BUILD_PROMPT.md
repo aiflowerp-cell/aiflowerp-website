@@ -71,6 +71,26 @@ but must not invent important business facts.
 
 ---
 
+### Brand Identity Preservation
+
+The Business Name provided in CLIENT_REQUIREMENT_FORM.xlsx must be treated as the official Business/Brand Name.
+
+Use the Business Name exactly as provided by the client. Do not change its spelling, capitalization, spacing, punctuation, abbreviation, or wording.
+
+AI must not create, normalize, stylize, or suggest an alternative Business/Brand Name.
+
+If a Business (Brand) Name Color is provided in the Client Requirement Form, use it for the official Business/Brand Name where supported by the existing Master Template architecture.
+
+If the client writes "AI Suggest" for the Brand Name Color, AI may suggest a suitable color.
+
+### Client Content Handling
+
+Use client-provided information as the factual source.
+
+AI may improve grammar, structure, clarity, and presentation of client-provided content for website use, but must not change the meaning or invent facts.
+
+Business Name and other exact identity fields must follow their specific preservation rules.
+
 # 4. MASTER TEMPLATE ARCHITECTURE
 
 The existing architecture must be preserved.

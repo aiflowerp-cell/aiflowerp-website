@@ -40,6 +40,10 @@ Deployment
 
 Client-specific details (business name, owner, phone, WhatsApp, email, address, working hours, social links, colors, logo, navigation links, services, products, gallery items, testimonials, and copy) **must reside in centralized configuration/content files**, never hard-coded inside reusable components or page routes.
 
+### Brand Identity Rule
+
+The Business Name provided in `CLIENT_REQUIREMENT_FORM.xlsx` must be used exactly as provided by the client as the official Business/Brand Name. Do not change its spelling, capitalization, spacing, punctuation, abbreviation, or wording. If a Business (Brand) Name Color is provided, use it where supported by the existing Master Template architecture.
+
 ---
 
 ## 3. File Documentation Standard
