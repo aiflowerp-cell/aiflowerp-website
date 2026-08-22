@@ -5,7 +5,7 @@
  *
  * RESPONSIBILITIES:
  * - Render PageIntro banner with About metadata
- * - Render AboutSection story
+ * - Render AboutSection story (with showHeading={false} to avoid duplication)
  * - Render Testimonials and ContactSection
  *
  * DEPENDENCIES:
@@ -31,7 +31,7 @@ export default function AboutPage() {
         title={content.about.title}
         description={content.about.description}
       />
-      <AboutSection />
+      <AboutSection showHeading={false} />
       <Testimonials />
       <ContactSection />
     </>

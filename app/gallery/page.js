@@ -5,7 +5,7 @@
  *
  * RESPONSIBILITIES:
  * - Render PageIntro banner with gallery copy
- * - Render Gallery masonry/grid layout
+ * - Safely render Gallery masonry/grid layout when items exist
  * - Render ContactSection CTA
  *
  * DEPENDENCIES:
@@ -23,7 +23,8 @@ import { ContactSection } from "@/components/sections/ContactSection";
 import { content } from "@/content/siteContent";
 
 export default function GalleryPage() {
-  const { galleryPage } = content;
+  const galleryPage = content.galleryPage || {};
+  const gallery = content.gallery || [];
 
   return (
     <>
@@ -32,11 +33,13 @@ export default function GalleryPage() {
         title={galleryPage.title}
         description={galleryPage.description}
       />
-      <section className="section">
-        <div className="container">
-          <Gallery />
-        </div>
-      </section>
+      {gallery.length > 0 && (
+        <section className="section">
+          <div className="container">
+            <Gallery />
+          </div>
+        </section>
+      )}
       <ContactSection />
     </>
   );

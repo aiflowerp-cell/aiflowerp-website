@@ -1,12 +1,12 @@
 /*
  * FILE: app/contact/page.js
  * PURPOSE:
- * Contact information, studio details, and interactive map page route.
+ * Contact information, direct WhatsApp, phone, and email communication channels.
  *
  * RESPONSIBILITIES:
  * - Render PageIntro banner with contact copy
- * - Render studio address, hours, and direct call/WhatsApp actions
- * - Render MapSection with embedded Google Map
+ * - Render verified contact channels (phone, WhatsApp, email) safely
+ * - Render MapSection if map embed exists
  * - Render ContactSection CTA banner
  *
  * DEPENDENCIES:
@@ -18,7 +18,7 @@
  * - Helper utilities (@/lib/site)
  *
  * NOTES:
- * - Client data is consumed from config/business.js and content/siteContent.js.
+ * - Fully client-agnostic; safely handles verified contact channels without fabrication.
  */
 
 import { PageIntro } from "@/components/layout/PageIntro";
@@ -30,7 +30,8 @@ import { telUrl, whatsappUrl } from "@/lib/site";
 import { Button } from "@/components/ui/Button";
 
 export default function ContactPage() {
-  const { contactPage } = content;
+  const contactPage = content.contactPage || {};
+  const details = contactPage.details || {};
 
   return (
     <>
@@ -39,22 +40,38 @@ export default function ContactPage() {
         title={contactPage.title}
         description={contactPage.description}
       />
-      <section className="section">
-        <div className="container contact-details">
-          <div>
-            <p className="eyebrow">{contactPage.details.eyebrow}</p>
-            <h2>{contactPage.details.title}</h2>
-          </div>
-          <div>
-            <p>{business.address}</p>
-            <p>{business.workingHours}</p>
-            <div className="button-row">
-              <Button href={telUrl(business.phone)}>Call {business.phone}</Button>
-              <Button href={whatsappUrl(business.whatsapp)} variant="text">WhatsApp us ↗</Button>
+      {(business.address || business.phone || business.whatsapp || business.email) && (
+        <section className="section">
+          <div className="container contact-details">
+            <div>
+              {details.eyebrow && <p className="eyebrow">{details.eyebrow}</p>}
+              {details.title && <h2>{details.title}</h2>}
+            </div>
+            <div>
+              {business.address && <p>{business.address}</p>}
+              {business.workingHours && <p>{business.workingHours}</p>}
+              {business.email && (
+                <p style={{ marginTop: "12px", fontSize: "16px" }}>
+                  <strong>Email: </strong>
+                  <a href={`mailto:${business.email}`} style={{ color: "var(--primary)" }}>
+                    {business.email}
+                  </a>
+                </p>
+              )}
+              <div className="button-row" style={{ marginTop: "24px" }}>
+                {business.phone && (
+                  <Button href={telUrl(business.phone)}>Call {business.phone}</Button>
+                )}
+                {business.whatsapp && (
+                  <Button href={whatsappUrl(business.whatsapp)} variant="text">
+                    WhatsApp us ↗
+                  </Button>
+                )}
+              </div>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
       <MapSection />
       <ContactSection />
     </>

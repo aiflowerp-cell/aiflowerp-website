@@ -1,78 +1,82 @@
+<!--
+FILE: docs/00_MASTER_INDEX.md
+PURPOSE:
+Central index, navigation portal, and architectural overview of the project documentation system.
+
+RESPONSIBILITIES:
+- Provide an overview of all core documentation files
+- Display the visual documentation hierarchy tree
+- Serve as the primary entry point for developers and AI agents
+
+DEPENDENCIES:
+- docs/FIRST_PROMPT.md
+- docs/ARCHITECTURE.md
+- docs/FILE_INDEX.md
+- docs/MASTER_PROJECT_MEMORY.md
+- docs/ROADMAP.md
+- docs/CLIENT_DATA_MAPPING.md
+- docs/CLIENT_WEBSITE_BUILD_PROMPT.md
+- docs/trigger_prompt.md
+- docs/CLIENT_REQUIREMENT_FORM.xlsx
+
+NOTES:
+- Maintained for Master Website Factory v1.4.
+-->
+
 # Master Project Documentation Index
 
-Welcome to the **website_master** documentation system.
+Welcome to the **website_master** Master Website Factory documentation system.
 
-This project is a reusable, production-ready Next.js master website template designed to generate client websites quickly by modifying configuration, content, and branding without altering core architecture.
+This project is a **Reusable Next.js Master Website Factory v1.4** designed to generate production-ready client websites through centralized configuration, client content, navigation, deterministic XLSX ingestion, client media discovery, and approved assets without altering the protected Master architecture.
 
 ---
 
-## Core Documentation Files
+# Core Documentation Files
 
 | Document | Description |
 | :--- | :--- |
-| [FIRST_PROMPT.md](file:///D:/website_master/docs/FIRST_PROMPT.md) | **Permanent AI Working Contract** & master engineering rules. Must be read before any session. |
-| [ARCHITECTURE.md](file:///D:/website_master/docs/ARCHITECTURE.md) | **Technical Architecture** — current layers, data flow, component hierarchy, and styling system. |
-| [FILE_INDEX.md](file:///D:/website_master/docs/FILE_INDEX.md) | **Architectural Navigation Map** — path and short purpose of every file in the repository. |
-| [MASTER_PROJECT_MEMORY.md](file:///D:/website_master/docs/MASTER_PROJECT_MEMORY.md) | **Project Decisions & Constraints** — permanent decisions that must never be reversed. |
-| [ROADMAP.md](file:///D:/website_master/docs/ROADMAP.md) | **Project Roadmap** — current completion status and future implementation phases. |
-| [CLIENT_WEBSITE_BUILD_PROMPT.md](CLIENT_WEBSITE_BUILD_PROMPT.md) | **Client Website Build Prompt** — AI agent के लिए client website बनाने का permanent workflow और customization rules. |
-
-| [CLIENT_REQUIREMENT_FORM.xlsx](CLIENT_REQUIREMENT_FORM.xlsx) | **Client Requirement Form** — नए client से business information, services, products, branding, contact details और website requirements लेने का primary form. |
+| `FIRST_PROMPT.md` | **Permanent AI Working Contract** — Master Factory working rules, engineering standards, change control, documentation discipline, and validation rules. |
+| `ARCHITECTURE.md` | **Technical Architecture** — technology stack, architectural layers, centralized data flow, component hierarchy, routing, styling, design tokens, XLSX ingestion, and client media architecture. |
+| `MASTER_PROJECT_MEMORY.md` | **Project Decisions & Invariants** — permanent architectural, workflow, theme, ingestion, media, and design decisions that must be preserved. |
+| `FILE_INDEX.md` | **Repository Navigation Map** — important project files and their short purposes. |
+| `ROADMAP.md` | **Project Roadmap** — current progress, completed work, frozen baseline, and future development. |
+| `CLIENT_REQUIREMENT_FORM.xlsx` | **Client Requirement Form** — primary client intake source for factual business information, preferences, requirements, and approved content. |
+| `CLIENT_DATA_MAPPING.md` | **Client Data Mapping Template** — standardized factual and media mapping artifact for traceable Stage A extraction. |
+| `CLIENT_WEBSITE_BUILD_PROMPT.md` | **Client Website Build Manual** — permanent rules, media discovery, and autonomous workflow for generating client websites from the frozen Master Template. |
+| `trigger_prompt.md` | **Standard Client Build Trigger** — ready-to-use prompt for starting a new client website generation workflow. |
 
 ---
 
-## Quick Reference Rules
+# Documentation System Hierarchy
 
-1. **One Step at a Time:** Never perform multi-step or unapproved changes.
-2. **Beginner-Friendly Communication:** Always explain key decisions and updates in simple Hindi.
-3. **Configuration-First:** Never hard-code client business data inside components.
-4. **Validation Required:** Always run lint and build verification before concluding any coding step.
-5. **Master Template Frozen:** `website_master v1.0` is frozen. Client-specific requirements must not directly modify the Master Template architecture.
-
-6. **Client Data Source:** `CLIENT_REQUIREMENT_FORM.xlsx` is the primary source for client business information and website requirements.
-
-7. **AI Build Contract:** `CLIENT_WEBSITE_BUILD_PROMPT.md` defines the permanent workflow and rules for creating a client website from the Master Template.
-
-8. **Configuration & Content Separation:** Business information belongs in `config/business.js`; website copy and client-facing content belong in `content/siteContent.js`.
-
-9. **Client Assets:** Client-provided logo, photographs, and other approved assets must be used where appropriate.
-
-10. **No Fabrication:** AI must not invent client facts, prices, testimonials, business history, contact information, or other important claims.
-
-11. **Demo Content Audit:** Before completing a client website, all unintended Master Template demo content must be identified and removed.
-
-12. **Validation:** Every client website must pass lint, build, route, contact-link, and visual validation before being considered ready.
-
-13. **Architecture Escalation:** If a client requirement cannot be fulfilled using existing configuration, content, and approved assets, stop and report that a Master Template architecture change may be required.
-
-14. **Version Discipline:** Any reusable architectural improvement must be evaluated as a future Master Template version rather than silently changing the frozen template.
-00_MASTER_INDEX.md
+```text
+docs/00_MASTER_INDEX.md
+(Central Documentation Index)
         │
         ├── FIRST_PROMPT.md
-        │      ↓
-        │   AI के permanent working rules
+        │   → Master Factory AI Working Contract
         │
         ├── ARCHITECTURE.md
-        │      ↓
-        │   Website कैसे बनी है
+        │   → Technical Architecture, Tokens, XLSX Ingestion & Media Layers
         │
         ├── MASTER_PROJECT_MEMORY.md
-        │      ↓
-        │   Permanent decisions
+        │   → Permanent Project Decisions & Invariants
         │
         ├── FILE_INDEX.md
-        │      ↓
-        │   कौन सी file कहाँ है
+        │   → Repository Navigation Map
         │
         ├── ROADMAP.md
-        │      ↓
-        │   Project कहाँ तक पहुँचा
+        │   → Project Progress & Milestone Freezes
         │
         ├── CLIENT_REQUIREMENT_FORM.xlsx
-        │      ↓
-        │   Client से जानकारी लेना
+        │   → Primary Client Factual Source of Truth
         │
-        └── CLIENT_WEBSITE_BUILD_PROMPT.md
-               ↓
-            AI को बताना
-            client website कैसे बनानी है
+        ├── CLIENT_DATA_MAPPING.md
+        │   → Standardized Factual & Media Mapping Specification
+        │
+        ├── CLIENT_WEBSITE_BUILD_PROMPT.md
+        │   → Client Website Generation Rules & Autonomous Workflow
+        │
+        └── trigger_prompt.md
+            → Standard Client Website Build Trigger
+```

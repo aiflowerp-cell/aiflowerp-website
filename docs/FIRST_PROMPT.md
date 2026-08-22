@@ -1,105 +1,130 @@
+<!--
+FILE: docs/FIRST_PROMPT.md
+
+PURPOSE:
+Permanent AI working contract and master engineering rules for the Master Website Factory.
+
+RESPONSIBILITIES:
+- Define AI working style, change control protocols, and beginner-friendly communication
+- Define Master Factory separation principles and protected architecture constraints
+- Enforce strict Brand Identity, Absolute No-Fabrication, and Demo Asset Isolation rules
+- Mandate deterministic XLSX ingestion via Master Factory Reader and Client Form Parser
+- Mandate authoritative Client Media Discovery (separating factual Excel from media assets)
+- Define client website workflow authority and autonomous execution boundaries
+- Define centralized business, content, theme, asset, and component rules
+- Define file documentation, indexing, styling, and validation standards
+
+DEPENDENCIES:
+- docs/00_MASTER_INDEX.md
+- docs/ARCHITECTURE.md
+- docs/CLIENT_WEBSITE_BUILD_PROMPT.md
+- docs/CLIENT_DATA_MAPPING.md
+- docs/MASTER_PROJECT_MEMORY.md
+- docs/ROADMAP.md
+- config/clientAssets.js
+- lib/client-data/index.js
+
+NOTES:
+- Must be read before any AI session on this codebase.
+- This document is the permanent AI working contract for website_master.
+-->
+
 # MASTER FIRST PROMPT & AI WORKING CONTRACT
 
 ## Project Root
+
 `D:\website_master`
 
 ## Project Purpose
-This project is a reusable, production-ready **Next.js Master Website Template**.
 
-The goal is **NOT** to build only a single client website. Instead, this project serves as a master template from which distinct client websites can be derived by updating business data, content, photography, branding, navigation, and configuration without rewriting core architecture.
+This project is a reusable, production-ready **Next.js Master Website Factory**.
 
----
+The goal is **NOT** to build a single client website directly in this repository.
 
-## 1. Working Style & Communication
-- **Beginner-Friendly Explanation:** The project owner is a beginner in coding. Explain all key decisions, file changes, and updates in simple Hindi.
-- **One Logical Step at a Time:** Never perform bulk unapproved modifications across multiple modules at once.
-- **Explicit Change Control:** Before any major implementation, explain:
-  - **WHAT:** What will change.
-  - **WHY:** Why it is necessary.
-  - **FILES:** Exactly which files will be affected.
-  - **RISK:** Potential side effects or risks.
-- **Wait for Approval:** Do not proceed to subsequent implementation steps without user review.
-- **Prefer Complete, Clean Files:** When editing a file with substantial changes, provide clean and maintainable code rather than scattered fragments.
+Instead, this project serves as a permanent Master Template from which separate client websites can be derived by configuring business data, editorial content, navigation, approved assets, and other supported client-specific values without altering the protected Master architecture.
 
 ---
 
-## 2. Master Template Separation Principle
-All client customizations must strictly adhere to this separation:
+# 1. Working Style & Communication
 
+## 1.1 Beginner-Friendly Communication
+
+The project owner is a beginner in coding.
+
+Therefore:
+
+- Explain important technical decisions in simple Hindi.
+- Clearly explain what is being changed and why.
+- Avoid unnecessary technical complexity.
+- Do not assume that the project owner understands implementation details.
+- When providing code changes, clearly identify the affected file.
+
+## 1.2 One Logical Step at a Time
+
+For normal development and maintenance work:
+
+- Do not perform bulk unapproved modifications across unrelated modules.
+- Work in one logical step at a time.
+- Complete and validate the current step before proceeding to another unrelated step.
+
+## 1.3 Explicit Change Control
+
+Before any major implementation or architecture change, explain:
+
+- **WHAT:** What will change.
+- **WHY:** Why the change is necessary.
+- **FILES:** Exactly which files will be affected.
+- **RISK:** Potential side effects or risks.
+
+For substantial file changes, prefer a complete clean file replacement over scattered fragments.
+
+---
+
+# 2. Master Factory Client-Data & Asset Ingestion Contract
+
+## 2.1 Two Complementary Authoritative Inputs
+
+```text
+[1] CLIENT FACTUAL DATA
+    CLIENT_REQUIREMENT_FORM.xlsx
+            ↓
+    Approved SheetJS 0.20.3 & lib/client-data/
+            ↓
+    Normalized Factual Data (Business, Hours, Contact, Pages, Features)
+
+[2] CLIENT MEDIA ASSETS
+    public/images/client/ (Approved Files: Logo, Photos)
+            ↓
+    config/clientAssets.js (Authoritative Manifest)
+
+            ↓ (COMBINED VIA CENTRAL CONFIG)
+config/business.js & content/siteContent.js
 ```
-MASTER TEMPLATE ARCHITECTURE
-         ↓
-Client Requirements
-         ↓
-Business Configuration & Content Layer (config/ & content/)
-         ↓
-Client-Specific Website Instance
-         ↓
-Deployment
+
+## 2.2 Client Media & Demo Asset Isolation Rules
+
+1. **Separately Supplied Media:** If "Logo File / Location" in Excel is blank, but an approved client logo exists in `public/images/client/logo/`, that media file is authoritative. A blank Excel field does NOT mean "no logo exists".
+2. **Demo Asset Isolation:** Master Template demo placeholder SVGs (`hero-room.svg`, `about-room.svg`, `product-*.svg`, `gallery-*.svg`, `logo-mark.svg`) must **NEVER** be presented as client business imagery.
+3. **Reusable Component Consumption:** Reusable components must consume asset paths strictly through `config/business.js`, `config/clientAssets.js`, or `content/siteContent.js`. Zero hardcoded image paths in UI components.
+
+---
+
+# 3. Client Website Factory Autonomous Workflow
+
+The Client Website Factory has a separate deterministic workflow defined by:
+
+- `docs/CLIENT_WEBSITE_BUILD_PROMPT.md`
+- `docs/CLIENT_DATA_MAPPING.md`
+- `docs/trigger_prompt.md`
+
+When a fresh client website workspace is started using the Master Website Factory trigger:
+
+```text
+Stage A — Data Extraction via Master Parser & Media Discovery
+        ↓
+Blocking Issue Check
+        ↓
+No Blocking Architecture Issue
+        ↓ (AUTONOMOUS TRANSITION)
+Stage B — Implementation & Validation
 ```
-
-Client-specific details (business name, owner, phone, WhatsApp, email, address, working hours, social links, colors, logo, navigation links, services, products, gallery items, testimonials, and copy) **must reside in centralized configuration/content files**, never hard-coded inside reusable components or page routes.
-
-### Brand Identity Rule
-
-The Business Name provided in `CLIENT_REQUIREMENT_FORM.xlsx` must be used exactly as provided by the client as the official Business/Brand Name. Do not change its spelling, capitalization, spacing, punctuation, abbreviation, or wording. If a Business (Brand) Name Color is provided, use it where supported by the existing Master Template architecture.
-
----
-
-## 3. File Documentation Standard
-Every important source file created or substantially modified must include a concise and structured header at the top of the file:
-
-```javascript
-/*
- * FILE: components/layout/Header.js
- * PURPOSE:
- * Main reusable website header and navigation component.
- *
- * RESPONSIBILITIES:
- * - Render site branding
- * - Render primary navigation
- * - Handle mobile navigation state
- *
- * DEPENDENCIES:
- * - Business configuration
- * - Navigation configuration
- *
- * NOTES:
- * - Must remain reusable across client websites.
- * - Client-specific data must not be hard-coded here.
- */
-```
-
----
-
-## 4. Component Architecture Standards
-Components must follow a clean three-tier separation:
-- `components/ui/`: Atomic interface primitives (Button, Card, Badge, etc.).
-- `components/layout/`: Global shell components (Header, Footer, PageIntro).
-- `components/sections/`: Reusable page sections (Hero, AboutSection, ServicesSection, ProductCard, Gallery, Testimonials, ContactSection, MapSection, WhatsAppButton).
-
-Avoid creating one-off or overly specific components when a generic configurable component can fulfill the requirement.
-
----
-
-## 5. UI, Styling, and Asset Rules
-- **Pure CSS Custom Properties:** The design system uses vanilla CSS variables (`globals.css`) for palettes (`--paper`, `--ink`, `--muted`, `--accent`, `--gold`, `--cream`, `--primary`, `--secondary`), typography, and spacing.
-- **Responsive & Accessible:** Ensure semantic HTML, proper contrast, ARIA attributes, and smooth mobile responsiveness across all viewports.
-- **Centralized Asset Management:** Organize static media predictably in `public/images/` and reference image paths through `config/` or `content/`.
-
----
-
-## 6. Documentation Maintenance
-Whenever an important file is created, modified, renamed, moved, or deleted:
-1. Update [FILE_INDEX.md](file:///D:/website_master/docs/FILE_INDEX.md) in the same session.
-2. Record any permanent architectural or design decisions in [MASTER_PROJECT_MEMORY.md](file:///D:/website_master/docs/MASTER_PROJECT_MEMORY.md).
-3. Track progress and next phases in [ROADMAP.md](file:///D:/website_master/docs/ROADMAP.md).
-
----
-
-## 7. Validation & Verification Rules
-After any code change:
-1. Run linting (`npm.cmd run lint`).
-2. Run build verification (`npm.cmd run build`).
-3. Verify affected page routes and UI responsiveness.
-4. Resolve all errors and warnings before concluding the step.

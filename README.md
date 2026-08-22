@@ -1,4 +1,24 @@
+<!--
+FILE: README.md
+PURPOSE:
+Master project entry point and standard overview documentation.
+
+RESPONSIBILITIES:
+- Introduce website_master as a Next.js App Router project
+- Provide basic developer getting started and deployment references
+
+DEPENDENCIES:
+- docs/00_MASTER_INDEX.md
+
+NOTES:
+- Full architectural and workflow documentation resides in the docs/ directory.
+-->
+
+# website_master
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+For Master Website Factory documentation, refer to [`docs/00_MASTER_INDEX.md`](./docs/00_MASTER_INDEX.md).
 
 ## Getting Started
 

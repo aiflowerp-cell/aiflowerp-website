@@ -1,3 +1,18 @@
+/*
+ * FILE: components/sections/SectionHeading.js
+ * PURPOSE:
+ * Standardized section title header primitive with eyebrow tag, main title, and optional description.
+ *
+ * RESPONSIBILITIES:
+ * - Render section eyebrow, heading, and description with alignment support
+ *
+ * DEPENDENCIES:
+ * - None
+ *
+ * NOTES:
+ * - Used across multiple content sections for typography consistency.
+ */
+
 export function SectionHeading({ eyebrow, title, description, align = "left" }) {
   return (
     <div className={`section-heading align-${align}`}>

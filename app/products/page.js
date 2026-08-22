@@ -1,46 +1,65 @@
 /*
  * FILE: app/products/page.js
  * PURPOSE:
- * Products catalog page route displaying the collection of items.
+ * Platform architecture and core workflow page route for ai flow.
  *
  * RESPONSIBILITIES:
- * - Render PageIntro banner with products copy
- * - Render product cards grid from central content
+ * - Render PageIntro banner with platform positioning
+ * - Render conceptual workflow pipeline ('How ai flow Works')
+ * - Render platform architecture pillars (structured data, verification gates, ledger posting, etc.)
  * - Render ContactSection CTA
  *
  * DEPENDENCIES:
  * - Layout components (PageIntro)
- * - Section components (ProductCard, ContactSection)
+ * - Section components (WorkflowSection, ContactSection)
  * - Central content layer (@/content/siteContent)
  *
  * NOTES:
- * - Page intro copy and product items are supplied via content/siteContent.js.
+ * - Explains ai flow as an accounting-first ERP platform rather than a generic product catalog.
  */
 
 import { PageIntro } from "@/components/layout/PageIntro";
-import { ProductCard } from "@/components/sections/ProductCard";
+import { WorkflowSection } from "@/components/sections/WorkflowSection";
 import { ContactSection } from "@/components/sections/ContactSection";
+import { Card } from "@/components/ui/Card";
 import { content } from "@/content/siteContent";
 
-export default function ProductsPage() {
-  const { productsPage } = content;
+export default function PlatformPage() {
+  const platform = content.platformPage || {};
+  const pillars = platform.pillars || [];
 
   return (
     <>
       <PageIntro
-        eyebrow={productsPage.eyebrow}
-        title={productsPage.title}
-        description={productsPage.description}
+        eyebrow={platform.eyebrow}
+        title={platform.title}
+        description={platform.description}
       />
-      <section className="section">
-        <div className="container">
-          <div className="product-grid">
-            {content.products.map((product) => (
-              <ProductCard key={product.name} product={product} />
-            ))}
+      <WorkflowSection />
+      {pillars.length > 0 && (
+        <section className="section platform-pillars-section">
+          <div className="container">
+            <div className="section-heading">
+              {platform.pillarsEyebrow && <p className="eyebrow">{platform.pillarsEyebrow}</p>}
+              {platform.pillarsTitle && <h2>{platform.pillarsTitle}</h2>}
+              {platform.pillarsDescription && (
+                <p className="platform-lead">{platform.pillarsDescription}</p>
+              )}
+            </div>
+            <div className="platform-pillars-grid">
+              {pillars.map((pillar, index) => (
+                <Card className="pillar-card" key={pillar.title || index}>
+                  <span className="pillar-number">
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3>{pillar.title}</h3>
+                  <p>{pillar.description}</p>
+                </Card>
+              ))}
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
       <ContactSection />
     </>
   );
