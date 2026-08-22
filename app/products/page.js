@@ -5,21 +5,22 @@
  *
  * RESPONSIBILITIES:
  * - Render PageIntro banner with platform positioning
- * - Render conceptual workflow pipeline ('How ai flow Works')
+ * - Render evidence-driven processing workflow ('From Business Document to Verified Transaction')
  * - Render platform architecture pillars (structured data, verification gates, ledger posting, etc.)
  * - Render ContactSection CTA
  *
  * DEPENDENCIES:
  * - Layout components (PageIntro)
- * - Section components (WorkflowSection, ContactSection)
+ * - Section components (EvidenceSection, ContactSection)
+ * - UI primitives (Card)
  * - Central content layer (@/content/siteContent)
  *
  * NOTES:
- * - Explains ai flow as an accounting-first ERP platform rather than a generic product catalog.
+ * - Explains ai flow enterprise architecture for cement businesses.
  */
 
 import { PageIntro } from "@/components/layout/PageIntro";
-import { WorkflowSection } from "@/components/sections/WorkflowSection";
+import { EvidenceSection } from "@/components/sections/EvidenceSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Card } from "@/components/ui/Card";
 import { content } from "@/content/siteContent";
@@ -35,7 +36,7 @@ export default function PlatformPage() {
         title={platform.title}
         description={platform.description}
       />
-      <WorkflowSection />
+      <EvidenceSection />
       {pillars.length > 0 && (
         <section className="section platform-pillars-section">
           <div className="container">
@@ -43,7 +44,7 @@ export default function PlatformPage() {
               {platform.pillarsEyebrow && <p className="eyebrow">{platform.pillarsEyebrow}</p>}
               {platform.pillarsTitle && <h2>{platform.pillarsTitle}</h2>}
               {platform.pillarsDescription && (
-                <p className="platform-lead">{platform.pillarsDescription}</p>
+                <p className="section-lead">{platform.pillarsDescription}</p>
               )}
             </div>
             <div className="platform-pillars-grid">
@@ -64,3 +65,4 @@ export default function PlatformPage() {
     </>
   );
 }
+

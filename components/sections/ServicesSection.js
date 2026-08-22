@@ -1,20 +1,19 @@
 /*
  * FILE: components/sections/ServicesSection.js
  * PURPOSE:
- * Services listing section displaying offerings with numbering, descriptions, and preview toggle.
+ * Capabilities section displaying verified cement ERP modules in modern Light SaaS grid.
  *
  * RESPONSIBILITIES:
  * - Render section top header with configurable eyebrow and title
- * - Iterate over services catalog and render numbered items with action indicators
- * - Support truncated slice in preview mode for homepage
- * - Safely handle empty services data
+ * - Iterate over verified capability items in responsive card grid
+ * - Support optional preview slice for homepage or full list
  *
  * DEPENDENCIES:
  * - @/content/siteContent
  * - @/components/ui/Button
  *
  * NOTES:
- * - Completely client-agnostic; copy is driven by content/siteContent.js.
+ * - Displays 11 verified ERP modules with cement dealer operational context.
  */
 
 import { content } from "@/content/siteContent";
@@ -25,14 +24,14 @@ export function ServicesSection({ preview = false }) {
     return null;
   }
 
-  const services = preview ? content.services.slice(0, 3) : content.services;
+  const services = preview ? content.services.slice(0, 6) : content.services;
   const sectionContent = content.servicesSection || {};
-  const eyebrow = sectionContent.eyebrow || "What we do";
-  const title = sectionContent.title || content.servicesPage?.title || "Our Services";
-  const ctaText = sectionContent.ctaText || "View all services";
+  const eyebrow = sectionContent.eyebrow || "Core Capabilities";
+  const title = sectionContent.title || content.servicesPage?.title || "Verified Capabilities";
+  const ctaText = sectionContent.ctaText || "View all capabilities";
 
   return (
-    <section className="section services-section">
+    <section className="services-section section">
       <div className="container">
         <div className="section-top">
           <div>
@@ -45,13 +44,12 @@ export function ServicesSection({ preview = false }) {
             </Button>
           )}
         </div>
-        <div className="service-list">
+        <div className="capabilities-grid">
           {services.map((service) => (
-            <div className="service-item" key={service.number}>
-              <span className="service-number">{service.number}</span>
+            <div className="capability-card" key={service.number || service.title}>
+              <span className="capability-number">{service.number}</span>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
-              <span className="service-arrow" aria-hidden="true">↗</span>
             </div>
           ))}
         </div>
@@ -59,3 +57,4 @@ export function ServicesSection({ preview = false }) {
     </section>
   );
 }
+

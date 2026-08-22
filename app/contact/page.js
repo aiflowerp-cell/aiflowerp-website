@@ -1,11 +1,11 @@
 /*
  * FILE: app/contact/page.js
  * PURPOSE:
- * Contact information, direct WhatsApp, phone, and email communication channels.
+ * Contact information, verified email, and demo booking channels for ai flow.
  *
  * RESPONSIBILITIES:
  * - Render PageIntro banner with contact copy
- * - Render verified contact channels (phone, WhatsApp, email) safely
+ * - Render verified contact channels (email, demo booking) safely
  * - Render MapSection if map embed exists
  * - Render ContactSection CTA banner
  *
@@ -42,7 +42,7 @@ export default function ContactPage() {
       />
       {(business.address || business.phone || business.whatsapp || business.email) && (
         <section className="section">
-          <div className="container contact-details">
+          <div className="container contact-grid">
             <div>
               {details.eyebrow && <p className="eyebrow">{details.eyebrow}</p>}
               {details.title && <h2>{details.title}</h2>}
@@ -59,12 +59,19 @@ export default function ContactPage() {
                 </p>
               )}
               <div className="button-row" style={{ marginTop: "24px" }}>
-                {business.phone && (
-                  <Button href={telUrl(business.phone)}>Call {business.phone}</Button>
+                {business.email && (
+                  <Button href={`mailto:${business.email}`}>
+                    Email {business.email}
+                  </Button>
                 )}
-                {business.whatsapp && (
+                {!business.whatsappIsPlaceholder && business.whatsapp && (
                   <Button href={whatsappUrl(business.whatsapp)} variant="text">
                     WhatsApp us ↗
+                  </Button>
+                )}
+                {business.phone && (
+                  <Button href={telUrl(business.phone)} variant="secondary">
+                    Call {business.phone}
                   </Button>
                 )}
               </div>
@@ -77,3 +84,4 @@ export default function ContactPage() {
     </>
   );
 }
+

@@ -1,20 +1,19 @@
 /*
  * FILE: components/sections/Hero.js
  * PURPOSE:
- * Landing page hero section featuring headline, background imagery, and configurable call-to-action buttons.
+ * Left-aligned two-column B2B SaaS landing hero section for ai flow with balanced visual density.
  *
  * RESPONSIBILITIES:
- * - Render home eyebrow, title, and lead copy
- * - Display background hero photography if provided
- * - Render configurable call-to-action buttons from content layer
- * - Render optional hero note badge
+ * - Render left-aligned cement dealer eyebrow, headline, description, and action CTAs
+ * - Render right-column framed ERP dashboard preview and reserved screenshot requirement slot
+ * - Maintain Apple-inspired modern Light SaaS visual hierarchy with balanced proportions
  *
  * DEPENDENCIES:
  * - @/components/ui/Button
  * - @/content/siteContent
  *
  * NOTES:
- * - Completely client-agnostic; no hardcoded action labels or niche category notes.
+ * - Two-column desktop grid with natural single-column mobile collapse.
  */
 
 import { Button } from "@/components/ui/Button";
@@ -26,29 +25,50 @@ export function Hero() {
 
   return (
     <section className="hero">
-      {home.heroImage && (
-        <div className="hero-image" style={{ backgroundImage: `url(${home.heroImage})` }} />
-      )}
-      <div className="container hero-content">
-        {home.eyebrow && <p className="eyebrow">{home.eyebrow}</p>}
-        {home.title && <h1>{home.title}</h1>}
-        {home.description && <p className="hero-copy">{home.description}</p>}
-        {ctas.length > 0 && (
-          <div className="button-row">
-            {ctas.map((cta) => (
-              <Button key={cta.label} href={cta.href} variant={cta.variant || "primary"}>
-                {cta.label}
-              </Button>
-            ))}
-          </div>
-        )}
-      </div>
-      {home.heroNote?.text && (
-        <div className="hero-note">
-          {home.heroNote.number && <>{home.heroNote.number} </>}
-          <span>{home.heroNote.text}</span>
+      <div className="container hero-grid">
+        <div className="hero-left">
+          {home.eyebrow && <p className="eyebrow hero-eyebrow">{home.eyebrow}</p>}
+          {home.title && <h1 className="hero-title">{home.title}</h1>}
+          {home.description && <p className="hero-copy">{home.description}</p>}
+          {ctas.length > 0 && (
+            <div className="button-row hero-cta-row">
+              {ctas.map((cta) => (
+                <Button key={cta.label} href={cta.href} variant={cta.variant || "primary"}>
+                  {cta.label} {cta.variant === "primary" ? "→" : ""}
+                </Button>
+              ))}
+            </div>
+          )}
         </div>
-      )}
+        <div className="hero-right">
+          <div className="erp-preview-frame hero-preview-card">
+            <div className="erp-frame-header">
+              <div className="erp-dots">
+                <span className="erp-dot" />
+                <span className="erp-dot" />
+                <span className="erp-dot" />
+              </div>
+              <span className="erp-frame-title">ai flow ERP — Executive Dashboard</span>
+              <span style={{ width: "36px" }} />
+            </div>
+            <div className="erp-frame-body hero-preview-body">
+              <div className="erp-placeholder-box hero-placeholder-box">
+                <span className="erp-placeholder-tag">Real ERP Screenshot Requirement</span>
+                <h3 className="erp-placeholder-title">Executive Operations Dashboard</h3>
+                <p className="erp-placeholder-desc">
+                  Dashboard KPIs, daily sales overview, stock position, and verified operational summaries from the running <span className="brand-blue">ai flow</span> ERP.
+                </p>
+                <code className="erp-placeholder-req">
+                  Slot: Live screenshot of Dashboard KPIs & operational summaries
+                </code>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
+
+
+

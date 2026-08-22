@@ -1,14 +1,13 @@
 /*
  * FILE: components/sections/AboutSection.js
  * PURPOSE:
- * Brand story and showroom presentation section with preview mode support.
+ * Brand story and product philosophy presentation section for ai flow.
  *
  * RESPONSIBILITIES:
- * - Display framed brand photography with optional establishment badge if provided
  * - Render brand story heading, eyebrow, and editorial paragraphs
- * - Provide optional 'More about us' link in preview mode
+ * - Apply brand blue treatment to 'ai flow' brand mentions
  * - Support showHeading toggle to prevent duplicate headings on inner About page
- * - Gracefully adapt layout when no client image is provided
+ * - Support optional preview link
  *
  * DEPENDENCIES:
  * - @/components/ui/Button
@@ -16,12 +15,26 @@
  * - @/content/siteContent
  *
  * NOTES:
- * - Completely client-agnostic; no hardcoded founding years, claims, or demo imagery.
+ * - Reflects the reality of cement distribution and evidence-driven accounting.
  */
 
 import { Button } from "@/components/ui/Button";
 import { business } from "@/config/business";
 import { content } from "@/content/siteContent";
+
+function renderFormattedText(text) {
+  if (typeof text !== "string") return text;
+  const parts = text.split(/(ai flow)/g);
+  return parts.map((part, index) =>
+    part === "ai flow" ? (
+      <span key={index} className="brand-blue">
+        ai flow
+      </span>
+    ) : (
+      part
+    )
+  );
+}
 
 export function AboutSection({ preview = false, showHeading = true }) {
   const { about } = content;
@@ -37,17 +50,20 @@ export function AboutSection({ preview = false, showHeading = true }) {
         )}
         <div className="about-copy">
           {showHeading && about.eyebrow && <p className="eyebrow">{about.eyebrow}</p>}
-          {showHeading && about.title && <h2>{about.title}</h2>}
-          {about.paragraphs?.map((paragraph) => (
-            <p key={paragraph}>{paragraph}</p>
+          {showHeading && about.title && <h2>{renderFormattedText(about.title)}</h2>}
+          {about.paragraphs?.map((paragraph, index) => (
+            <p key={index}>{renderFormattedText(paragraph)}</p>
           ))}
           {preview && (
-            <Button href="/about" variant="text">
-              More about us <span aria-hidden="true">↗</span>
-            </Button>
+            <div style={{ marginTop: "24px" }}>
+              <Button href="/about" variant="secondary">
+                Read our story →
+              </Button>
+            </div>
           )}
         </div>
       </div>
     </section>
   );
 }
+

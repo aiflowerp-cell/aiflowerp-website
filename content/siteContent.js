@@ -5,9 +5,9 @@
  *
  * RESPONSIBILITIES:
  * - Store page copy (eyebrows, titles, descriptions)
- * - Store hero CTAs, 11 verified ERP capability listings, conceptual workflow pipeline, and platform pillars
+ * - Store hero CTAs, 11 verified ERP capability listings, conceptual cement workflow, and platform pillars
  * - Store factual about copy, contact banner copy, and footer copy
- * - Provide 100% factual client copy for 'ai flow' without fabrication or demo placeholders
+ * - Provide 100% factual client copy for 'ai flow' without fabrication or unverified claims
  *
  * DEPENDENCIES:
  * - None
@@ -15,196 +15,284 @@
  * NOTES:
  * - Brand name: 'ai flow' (strictly lowercase in all customer-facing copy).
  * - Verified capabilities mapped directly from the ai flow ERP system architecture.
- * - Demo SVG placeholders, fake testimonials, and unstated capabilities are strictly excluded.
+ * - Conceptual 8-step business flow is strictly distinguished from currently verified software modules.
  */
 
 export const content = {
   home: {
-    eyebrow: "Accounting-First ERP Platform",
-    title: "Accounting-first ERP for structured, evidence-driven business workflows.",
-    description: "ai flow connects business documents, verification, transactions, inventory, accounting workflows, and reporting in a structured system.",
+    eyebrow: "CEMENT DEALER ERP",
+    title: "Cement dealer ERP for billing, stock, lifting, sales & accounting.",
+    description: "Manage company billing, transit stock, lifting, physical stock, sales, customer balances, and accounting from one connected system.",
     heroImage: null,
     heroNote: null,
     heroCtas: [
-      { label: "Open ERP", href: "https://erp.aiflowerp.in", variant: "primary" },
-      { label: "Explore Capabilities", href: "/services", variant: "light" },
-      { label: "Platform Overview", href: "/products", variant: "light" },
+      { label: "Book a Demo", href: "/contact", variant: "primary" },
+      { label: "Explore Platform", href: "/products", variant: "secondary" },
     ],
   },
-  about: {
-    eyebrow: "Product Philosophy",
-    title: "Built for structured business data, verification, and auditability.",
-    description: "ai flow is an accounting-first ERP platform designed to support business management, accounting workflows, document-based data entry, verification, inventory and operational workflows.",
-    image: null,
-    badge: null,
-    paragraphs: [
-      "ai flow is developed around a clear architectural philosophy: business management systems must be accounting-first, evidence-driven, and verifiable at every step.",
-      "Rather than relying on unverified data entry or superficial automation, ai flow integrates document-based extraction, operator verification gates, and double-entry accounting rules to ensure operational clarity and financial integrity.",
-      "From multi-tenant company separation to real-time transit stock tracking and financial-year posting controls, the platform is engineered to give business owners and accountants absolute confidence in their operational numbers.",
-    ],
-  },
-  workflow: {
-    eyebrow: "How ai flow Works",
-    title: "From business documents to verified transactions.",
-    description: "OCR assists extraction, while verification gates and double-entry rules ensure that only valid, approved data enters your accounting ledger.",
-    ctaHref: "/products",
-    ctaText: "Explore platform architecture",
-    steps: [
+  realitySection: {
+    eyebrow: "Built for Cement Reality",
+    title: "Designed for the real operational challenges of cement distribution.",
+    description: "Generic accounting tools treat cement like simple packaged retail items. ai flow is engineered around the actual commodity workflows of cement dealers.",
+    challenges: [
       {
         number: "01",
-        title: "Document Ingestion",
-        description: "Purchase invoices, lifting challans, and source business documents are ingested into the platform via document upload.",
+        title: "Transit vs Godown Stock",
+        description: "Separates billed cement en route from verified physical stock in the godown, preventing false inventory assumptions.",
       },
       {
         number: "02",
-        title: "OCR-Assisted Extraction",
-        description: "Intelligent extraction routines read document text, identifying invoice numbers, dates, line items, taxes, and totals.",
+        title: "Lifting & Challan Processing",
+        description: "Ingests and matches dispatch challans directly to manufacturer purchase invoices to track lifted versus pending quantities.",
       },
       {
         number: "03",
-        title: "Entity & Item Matching",
-        description: "Automated routines validate buyer GSTIN, match supplier records against masters, and resolve product catalog items.",
+        title: "Connected Sales & Ledgers",
+        description: "Links sales vouchers directly to customer ledger balances and payment receipts, posting to double-entry ledgers with source document evidence.",
+      },
+    ],
+  },
+  workflow: {
+    eyebrow: "Cement Business Flow",
+    title: "One connected workflow for your complete cement business.",
+    description: "How a cement dealership operates in reality — from credit limit and company billing to godown stock, sales, and collection.",
+    ruleTitle: "Company Billing is NOT Physical Stock.",
+    ruleDescription: "When a cement company issues an invoice, it creates Transit Stock. Material only enters Physical Stock when lifting occurs and goods are received in the godown. ai flow keeps transit and physical inventory as separate operational states, with their quantities tracked through the corresponding workflows.",
+    ctaHref: "/services",
+    ctaText: "Explore verified modules",
+    note: "The 8-step flow illustrates the real-world operational workflow around which ai flow is built.",
+    steps: [
+      {
+        number: "01",
+        title: "Credit Limit",
+        description: "Establish company credit boundaries and customer trade terms for structured operations.",
+      },
+      {
+        number: "02",
+        title: "Company Billing",
+        description: "Record purchase invoices received from cement manufacturers with itemized rates and taxes.",
+      },
+      {
+        number: "03",
+        title: "Transit Stock",
+        description: "Track billed quantities on the road or awaiting plant dispatch before reaching the godown.",
       },
       {
         number: "04",
-        title: "Draft Creation",
-        description: "A structured draft voucher is generated with itemized quantities, rates, tax calculations, and freight breakdown.",
+        title: "Lifting",
+        description: "Process factory dispatch challans and truck dispatches to verify lifted quantities.",
       },
       {
         number: "05",
-        title: "Operator Verification",
-        description: "Designated operators review extracted values, resolve any matching discrepancies, and verify document evidence.",
+        title: "Physical Stock",
+        description: "Maintain verified physical bag inventory in your godown upon unloading.",
       },
       {
         number: "06",
-        title: "Controlled Posting",
-        description: "Verified vouchers pass rigorous validation gates and post directly into the double-entry accounting ledger.",
+        title: "Sales",
+        description: "Generate customer sales invoices with vehicle details, quantities, and agreed prices.",
       },
       {
         number: "07",
-        title: "Operational Impact",
-        description: "Transit stock registers, physical inventory balances, sales records, and collection balances update in real time.",
+        title: "Collection",
+        description: "Record customer payment receipts and maintain updated customer ledger balances.",
       },
       {
         number: "08",
-        title: "Dashboard & Reporting",
-        description: "Financial-year-aware ledgers, trial balances, and operational visibility dashboards reflect the verified entry.",
+        title: "Company Payment",
+        description: "Manage company account settlements and reconcile purchase ledgers with document evidence.",
+      },
+    ],
+  },
+  erpShowcase: {
+    eyebrow: "Real ERP Showcase",
+    title: "Inside the ai flow Platform",
+    description: "Real operational screens from the running ai flow ERP for cement dealers.",
+    modules: [
+      {
+        id: "dashboard",
+        title: "Executive Dashboard",
+        description: "Dashboard KPIs, sales overview, stock position, and verified operational summaries.",
+        requirement: "Dashboard screen showing sales metrics, stock positions, and operational status.",
+        image: null,
+      },
+      {
+        id: "billing",
+        title: "Company Billing Ingestion",
+        description: "Purchase invoice document upload, extracted data review, and draft voucher creation.",
+        requirement: "Purchase invoice entry interface with extracted data fields and draft voucher.",
+        image: null,
+      },
+      {
+        id: "transit",
+        title: "Transit Stock Register",
+        description: "Listing of company purchase invoices, transit quantities, and pending lifting status.",
+        requirement: "Transit stock register showing company invoices, transit quantities, and lifting balances.",
+        image: null,
+      },
+      {
+        id: "stock",
+        title: "Physical Stock Register",
+        description: "Godown inventory register tracking physical stock balances.",
+        requirement: "Physical stock register tracking available bag counts and warehouse quantities.",
+        image: null,
+      },
+      {
+        id: "lifting",
+        title: "Lifting Management",
+        description: "Lifting voucher and dispatch challan matching against purchase vouchers.",
+        requirement: "Lifting management screen matching dispatch challans to purchase orders.",
+        image: null,
+      },
+      {
+        id: "ledgers",
+        title: "Double-Entry Ledgers",
+        description: "Transaction history and ledger accounts with linked source-document evidence.",
+        requirement: "Ledger transaction view showing double-entry postings with document evidence links.",
+        image: null,
       },
     ],
   },
   servicesPage: {
     eyebrow: "System Capabilities",
-    title: "Verified ERP Modules & Workflows",
-    description: "Explore the 11 major verified capability areas of the ai flow accounting-first ERP platform.",
+    title: "ERP Modules Built for Cement Dealers & Distributors",
+    description: "Explore the verified operational modules that power the ai flow platform.",
   },
   servicesSection: {
     eyebrow: "Core Capabilities",
-    title: "Verified System Capabilities",
+    title: "Verified Cement Business Capabilities",
     ctaText: "View all capabilities",
   },
   services: [
     {
       number: "01",
-      title: "Accounting-First ERP Architecture",
-      description: "Structured business data management where every transaction impacts double-entry ledgers with complete auditability, evidence tracking, and strict financial consistency.",
+      title: "Company Billing Ingestion",
+      description: "Record and process manufacturer purchase invoices via document upload, header verification, and draft vouchers.",
     },
     {
       number: "02",
-      title: "Multi-Tenant Business Management",
-      description: "Complete company-level data isolation, role-based access control (RBAC), and secure token-based user invitations across multiple business entities.",
+      title: "Transit Stock Tracking",
+      description: "Dual-register tracking that maintains distinct records of billed material en route or pending lifting.",
     },
     {
       number: "03",
-      title: "OCR-Assisted Document Workflows",
-      description: "Document ingestion powered by OCR assistance to capture invoice metadata, supplier headers, line items, and tax totals directly from source files.",
+      title: "Lifting Challan Processing",
+      description: "Ingest and match dispatch challans to purchase vouchers to record lifted quantities.",
     },
     {
       number: "04",
-      title: "Buyer Verification & Entity Validation",
-      description: "Multi-point verification validating buyer GSTIN, company trade identity, and structural compliance before any transaction draft is created.",
+      title: "Godown Physical Stock Management",
+      description: "Maintain physical inventory balances verified upon godown receipt.",
     },
     {
       number: "05",
-      title: "Supplier & Product Matching",
-      description: "Intelligent matching algorithms that resolve OCR text to verified supplier masters and product catalogs with operator confirmation gates.",
+      title: "Sales & Customer Invoicing",
+      description: "Create sales vouchers, track customer dispatches, and record customer receivables.",
     },
     {
       number: "06",
-      title: "Purchase Draft & Posting Workflows",
-      description: "Structured draft voucher creation, multi-point posting validation, ledger debit/credit assignment, and immutable transaction history.",
+      title: "Collection & Receipt Recording",
+      description: "Record customer payment receipts and update customer ledger balances.",
     },
     {
       number: "07",
-      title: "Lifting Challan OCR & Lifting Workflows",
-      description: "Specialized lifting voucher extraction for cement and commodities, reconciling dispatch challans against purchase contracts and vehicle logs.",
+      title: "Double-Entry Financial Accounting",
+      description: "Verified transactions are posted through structured double-entry accounting rules, with transaction history and available source-document evidence.",
     },
     {
       number: "08",
-      title: "Transit & Physical Stock Management",
-      description: "Dual-register inventory control that tracks transit stock distinctly from warehouse physical stock balances to eliminate inventory discrepancies.",
+      title: "OCR-Assisted Document Ingestion",
+      description: "Intelligent text capture from source invoices and lifting challans to accelerate data entry.",
     },
     {
       number: "09",
-      title: "Sales & Collection Workflows",
-      description: "Comprehensive sales invoice management, dispatch tracking, customer receivable registers, and integrated payment collection workflows.",
+      title: "Operator Verification Gates",
+      description: "Structured human confirmation checkpoints to validate extracted document values before posting.",
     },
     {
       number: "10",
-      title: "Financial-Year-Aware Reporting",
-      description: "Strict financial year boundary controls with active posting year locks, historical viewing modes, and year-specific ledger reconciliation.",
+      title: "Entity & Product Master Matching",
+      description: "Resolve buyer GSTIN, supplier masters, and product catalog items against master records.",
     },
     {
       number: "11",
-      title: "Dashboard & Operational Visibility",
-      description: "Real-time management dashboards providing immediate visibility into daily transaction volumes, pending verification queues, and ledger summaries.",
+      title: "Financial-Year-Aware Controls & Reporting",
+      description: "Financial-year posting controls, historical financial-year viewing, and operational dashboard summaries.",
     },
   ],
+  evidenceSection: {
+    eyebrow: "Evidence-Driven Processing",
+    title: "From Business Document to Verified Transaction",
+    description: "ai flow connects source business documents, OCR-assisted extraction, operator verification, and structured transaction processing to maintain verified business records.",
+    steps: [
+      {
+        number: "01",
+        title: "Document Ingestion",
+        description: "Upload purchase bills, lifting challans, and source business documents into the platform.",
+      },
+      {
+        number: "02",
+        title: "OCR-Assisted Extraction",
+        description: "Extract invoice numbers, dates, line items, taxes, and supplier details directly from source files.",
+      },
+      {
+        number: "03",
+        title: "Operator Verification",
+        description: "Operators review extracted values and confirm entity matching before any transaction is drafted.",
+      },
+      {
+        number: "04",
+        title: "Verified Posting",
+        description: "Confirmed vouchers pass validation gates and post to stock registers and double-entry ledgers with document links.",
+      },
+    ],
+  },
   platformPage: {
-    eyebrow: "Software Platform",
-    title: "ai flow ERP Platform Architecture",
-    description: "An accounting-first enterprise platform engineered for structured business data, evidence-driven processing, and verified transaction workflows.",
-    pillarsEyebrow: "Platform Architecture",
-    pillarsTitle: "Core Architectural Pillars",
-    pillarsDescription: "How ai flow delivers auditability, data integrity, and operational control at scale.",
+    eyebrow: "Platform Architecture",
+    title: "Engineered for Data Integrity, Verification, and Control",
+    description: "How ai flow pairs OCR document processing and operator verification with structured double-entry accounting.",
+    pillarsEyebrow: "Architectural Pillars",
+    pillarsTitle: "Core Architectural Principles",
+    pillarsDescription: "How ai flow delivers data integrity and operational control for cement businesses.",
     pillars: [
       {
         title: "Structured Business Data",
-        description: "Every business event is structured into verified records, master associations, and company-isolated data partitions.",
+        description: "Every business transaction is structured into verified records, master associations, and company-isolated data partitions.",
       },
       {
         title: "Document-Based Ingestion",
-        description: "OCR-assisted document processing extracts invoice, challan, and voucher data directly from original business papers.",
+        description: "OCR-assisted document processing captures invoice and challan data directly from original business papers.",
       },
       {
         title: "Controlled Verification Gates",
-        description: "Strict multi-stage validation ensures entity identities, GSTIN numbers, and item line prices match before drafting.",
+        description: "Operator confirmation checkpoints ensure entity identities, GSTIN numbers, and item prices match before drafting.",
       },
       {
         title: "Double-Entry Ledger Posting",
-        description: "Transactions adhere to rigorous double-entry bookkeeping rules, ensuring balance sheet accuracy and complete ledger integrity.",
+        description: "Transactions follow structured double-entry rules, posting directly to appropriate ledger accounts with document evidence.",
       },
       {
         title: "Transit & Physical Stock Control",
-        description: "Clear architectural separation between goods in transit and verified physical inventory prevents leakage and shrinkage.",
+        description: "Clear operational separation between goods in transit and verified physical inventory prevents stock confusion.",
       },
       {
         title: "Financial Year Isolation",
-        description: "Financial year locks protect closed periods while allowing historical audit review without risk of unauthorized changes.",
+        description: "Financial-year posting controls protect closed periods while allowing historical viewing.",
       },
       {
-        title: "Auditability & Traceability",
-        description: "Every ledger entry links back to original document evidence, verification history, and timestamped operator actions.",
+        title: "Document Evidence Linking",
+        description: "Transaction entries link back to original document evidence and timestamped operator actions.",
       },
       {
-        title: "Operational Visibility",
-        description: "Real-time dashboards provide business owners with clear oversight across purchases, sales, collections, and pending tasks.",
+        title: "Multi-Tenant Isolation",
+        description: "Company-level data isolation and role-based access control across business entities.",
       },
     ],
   },
   productsPage: {
-    eyebrow: "Software Platform",
-    title: "ai flow ERP Platform",
-    description: "ai flow — an accounting-first ERP software platform.",
+    eyebrow: "Platform Architecture",
+    title: "ai flow ERP Platform Architecture",
+    description: "An accounting-first enterprise platform engineered for structured business data, evidence-driven processing, and verified transaction workflows.",
   },
   products: [],
   galleryPage: {
@@ -218,11 +306,23 @@ export const content = {
     title: null,
   },
   testimonials: [],
+  about: {
+    eyebrow: "About ai flow",
+    title: "Software Built for the Reality of Cement Distribution",
+    description: "Why we built an accounting-first ERP around actual commodity business workflows.",
+    image: null,
+    badge: null,
+    paragraphs: [
+      "ai flow is developed around a clear architectural principle: business management software for cement distributors must reflect the physical realities of the trade.",
+      "In a cement dealership, company billing does not mean physical stock has arrived, lifting challans represent actual movements from the plant, and customer receivables must be tracked accurately alongside double-entry ledgers.",
+      "Rather than relying on unverified data entry or superficial automation, ai flow integrates document-based extraction, operator verification gates, and structured accounting rules to give business owners reliable operational numbers.",
+    ],
+  },
   contactBanner: {
-    eyebrow: "Connect With Us",
-    title: "Connect with the ai flow team",
-    description: "Reach out to discuss ai flow ERP workflows, architecture, and platform capabilities.",
-    ctaText: "Inquire on WhatsApp",
+    eyebrow: "Schedule a Walkthrough",
+    title: "Ready to see how ai flow manages your cement operations?",
+    description: "Schedule a walkthrough of the platform and see how document-based workflows bring clarity to your business.",
+    ctaText: "Book a Demo",
   },
   mapSection: {
     eyebrow: null,
@@ -231,18 +331,19 @@ export const content = {
     ctaText: null,
   },
   contactPage: {
-    eyebrow: "Contact Us",
-    title: "Get in touch with ai flow",
-    description: "Have questions about ai flow ERP capabilities or want to connect? Reach out via WhatsApp or email.",
+    eyebrow: "Book a Demo",
+    title: "Connect with the ai flow Team",
+    description: "Schedule a demonstration of the ai flow Cement Dealer ERP or reach out with your operational questions.",
     details: {
       eyebrow: "Direct Inquiries",
       title: "Contact Information",
     },
   },
   footer: {
-    tagline: "An accounting-first ERP platform engineered for structured business management, evidence-driven processing, and verified transaction workflows.",
+    tagline: "An ERP designed around the real workflow of a cement business — managing company billing, transit stock, lifting, physical stock, sales, and accounting.",
     exploreLabel: "Explore",
     contactLabel: "Contact",
-    whatsappText: "Chat on WhatsApp",
+    whatsappText: "WhatsApp Inquiry",
   },
 };
+

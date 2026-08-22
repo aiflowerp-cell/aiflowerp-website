@@ -8,7 +8,7 @@
  * - Apply brandNameTextColor if specified
  * - Render primary navigation links dynamically from configuration
  * - Handle mobile drawer navigation state (open/close)
- * - Render optional header call-to-action button from configuration
+ * - Render header call-to-action button and secondary Open ERP link
  *
  * DEPENDENCIES:
  * - next/link
@@ -23,6 +23,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
 import { business, navigation } from "@/config/business";
 import { Button } from "@/components/ui/Button";
@@ -33,7 +34,16 @@ export function Header() {
     <header className="site-header">
       <div className="container header-inner">
         <Link className="brand" href="/" onClick={() => setOpen(false)}>
-          {business.logo && <img src={business.logo} alt="" width="42" height="42" style={{ objectFit: "contain" }} />}
+          {business.logo && (
+            <Image
+              src={business.logo}
+              alt="ai flow logo"
+              width={38}
+              height={38}
+              style={{ objectFit: "contain" }}
+              priority
+            />
+          )}
           <span>
             <strong style={business.brandNameTextColor ? { color: business.brandNameTextColor } : {}}>
               {business.shortName || business.name}
@@ -41,6 +51,7 @@ export function Header() {
             {business.tagline && <small>{business.tagline}</small>}
           </span>
         </Link>
+
         <button
           className="menu-toggle"
           type="button"
@@ -56,8 +67,19 @@ export function Header() {
               {item.label}
             </Link>
           ))}
+          {business.appUrl && (
+            <a
+              href={business.appUrl}
+              className="header-erp-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+            >
+              Open ERP ↗
+            </a>
+          )}
           {business.headerCta?.label && (
-            <Button href={business.headerCta.href || "/contact"}>
+            <Button href={business.headerCta.href || "/contact"} onClick={() => setOpen(false)}>
               {business.headerCta.label}
             </Button>
           )}
@@ -66,3 +88,4 @@ export function Header() {
     </header>
   );
 }
+

@@ -1,20 +1,20 @@
 /*
  * FILE: components/sections/WorkflowSection.js
  * PURPOSE:
- * Conceptual workflow pipeline section explaining the document-to-posting process in ai flow.
+ * Conceptual cement business workflow section illustrating the 8-step real-world operational model.
  *
  * RESPONSIBILITIES:
- * - Render workflow section header (eyebrow, title, description)
- * - Render numbered process steps in structured responsive layout
- * - Support optional CTA button
- * - Safely omit section if no workflow steps are provided
+ * - Render section header (eyebrow, title, description)
+ * - Render prominent 'Company Billing is NOT Physical Stock' callout box
+ * - Render 8-step real-world cement process cards
+ * - Render clarifying footer note distinguishing conceptual flow from software modules
  *
  * DEPENDENCIES:
  * - @/content/siteContent
  * - @/components/ui/Button
  *
  * NOTES:
- * - Client-agnostic component visualizing 'Document → Extract → Verify → Draft → Review → Post → Operational Impact → Reporting'.
+ * - Visualizes Credit Limit → Company Billing → Transit Stock → Lifting → Physical Stock → Sales → Collection → Company Payment.
  */
 
 import { content } from "@/content/siteContent";
@@ -27,7 +27,7 @@ export function WorkflowSection({ cta = false }) {
   }
 
   return (
-    <section className="section workflow-section">
+    <section className="workflow-section section">
       <div className="container">
         <div className="section-top">
           <div>
@@ -37,10 +37,20 @@ export function WorkflowSection({ cta = false }) {
           </div>
           {cta && workflow.ctaHref && (
             <Button href={workflow.ctaHref} variant="text">
-              {workflow.ctaText || "Learn more"} <span aria-hidden="true">↗</span>
+              {workflow.ctaText || "View verified modules"} <span aria-hidden="true">↗</span>
             </Button>
           )}
         </div>
+
+        {workflow.ruleTitle && (
+          <div className="workflow-rule-callout">
+            <div className="workflow-rule-title">
+              <span aria-hidden="true">ℹ️</span> {workflow.ruleTitle}
+            </div>
+            <p className="workflow-rule-description">{workflow.ruleDescription}</p>
+          </div>
+        )}
+
         <div className="workflow-grid">
           {workflow.steps.map((step, index) => (
             <div className="workflow-card" key={step.title || index}>
@@ -52,7 +62,12 @@ export function WorkflowSection({ cta = false }) {
             </div>
           ))}
         </div>
+
+        {workflow.note && (
+          <p className="workflow-note">{workflow.note}</p>
+        )}
       </div>
     </section>
   );
 }
+
