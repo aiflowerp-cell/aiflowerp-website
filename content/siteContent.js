@@ -21,9 +21,9 @@
 export const content = {
   home: {
     eyebrow: "CEMENT DEALER ERP",
-    title: "Cement dealer ERP for billing, stock, lifting, sales & accounting.",
+    title: "The ERP built for your cement business.",
     description: "Manage company billing, transit stock, lifting, physical stock, sales, customer balances, and accounting from one connected system.",
-    heroImage: null,
+    heroImage: "/images/erp/dashboard.png",
     heroNote: null,
     heroCtas: [
       { label: "Book a Demo", href: "/contact", variant: "primary" },
@@ -319,11 +319,12 @@ export const content = {
     ],
   },
   contactBanner: {
-    eyebrow: "Schedule a Walkthrough",
-    title: "Ready to see how ai flow manages your cement operations?",
-    description: "Schedule a walkthrough of the platform and see how document-based workflows bring clarity to your business.",
-    ctaText: "Book a Demo",
-  },
+  eyebrow: "BOOK A DEMO",
+  title: "See ai flow in action.",
+  description:
+    "Schedule a live demonstration of the ai flow Cement Dealer ERP and see how it handles billing, transit stock, lifting, physical stock, sales and customer balances.",
+  ctaText: "Book a Demo / Send Enquiry",
+},
   mapSection: {
     eyebrow: null,
     title: null,
@@ -331,9 +332,10 @@ export const content = {
     ctaText: null,
   },
   contactPage: {
-    eyebrow: "Book a Demo",
-    title: "Connect with the ai flow Team",
-    description: "Schedule a demonstration of the ai flow Cement Dealer ERP or reach out with your operational questions.",
+  eyebrow: "BOOK A DEMO",
+  title: "See ai flow in action.",
+  description:
+    "Schedule a live demonstration of the ai flow Cement Dealer ERP and see how it handles billing, transit stock, lifting, physical stock, sales and customer balances.",
     details: {
       eyebrow: "Direct Inquiries",
       title: "Contact Information",

@@ -11,45 +11,76 @@
  * DEPENDENCIES:
  * - @/content/siteContent
  * - @/components/ui/Button
+ * - @/components/ui/BrandText
  *
  * NOTES:
  * - Displays 11 verified ERP modules with cement dealer operational context.
+ * - Uses the centralized BrandText renderer for visible "ai flow" brand mentions.
  */
 
 import { content } from "@/content/siteContent";
 import { Button } from "@/components/ui/Button";
+import { BrandText } from "@/components/ui/BrandText";
 
 export function ServicesSection({ preview = false }) {
   if (!content.services || content.services.length === 0) {
     return null;
   }
 
-  const services = preview ? content.services.slice(0, 6) : content.services;
+  const services = preview
+    ? content.services.slice(0, 6)
+    : content.services;
+
   const sectionContent = content.servicesSection || {};
   const eyebrow = sectionContent.eyebrow || "Core Capabilities";
-  const title = sectionContent.title || content.servicesPage?.title || "Verified Capabilities";
-  const ctaText = sectionContent.ctaText || "View all capabilities";
+  const title =
+    sectionContent.title ||
+    content.servicesPage?.title ||
+    "Verified Capabilities";
+  const ctaText =
+    sectionContent.ctaText || "View all capabilities";
 
   return (
     <section className="services-section section">
       <div className="container">
         <div className="section-top">
           <div>
-            {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-            {title && <h2>{title}</h2>}
+            {eyebrow && (
+              <p className="eyebrow">{eyebrow}</p>
+            )}
+
+            {title && (
+              <h2>
+                <BrandText text={title} />
+              </h2>
+            )}
           </div>
+
           {preview && (
             <Button href="/services" variant="text">
-              {ctaText} <span aria-hidden="true">↗</span>
+              {ctaText}{" "}
+              <span aria-hidden="true">↗</span>
             </Button>
           )}
         </div>
+
         <div className="capabilities-grid">
           {services.map((service) => (
-            <div className="capability-card" key={service.number || service.title}>
-              <span className="capability-number">{service.number}</span>
-              <h3>{service.title}</h3>
-              <p>{service.description}</p>
+            <div
+              className="capability-card"
+              key={service.number || service.title}
+            >
+              <span className="capability-number">
+                {service.number}
+              </span>
+
+              <h3>
+                <BrandText text={service.title} />
+              </h3>
+
+              <p>
+                <BrandText text={service.description} />
+              </p>
             </div>
           ))}
         </div>
@@ -57,4 +88,3 @@ export function ServicesSection({ preview = false }) {
     </section>
   );
 }
-

@@ -12,16 +12,20 @@
  * DEPENDENCIES:
  * - @/content/siteContent
  * - @/components/ui/Button
+ * - @/components/ui/BrandText
  *
  * NOTES:
  * - Visualizes Credit Limit → Company Billing → Transit Stock → Lifting → Physical Stock → Sales → Collection → Company Payment.
+ * - Uses the centralized BrandText renderer for visible "ai flow" brand mentions.
  */
 
 import { content } from "@/content/siteContent";
 import { Button } from "@/components/ui/Button";
+import { BrandText } from "@/components/ui/BrandText";
 
 export function WorkflowSection({ cta = false }) {
   const workflow = content.workflow;
+
   if (!workflow || !workflow.steps || workflow.steps.length === 0) {
     return null;
   }
@@ -31,13 +35,27 @@ export function WorkflowSection({ cta = false }) {
       <div className="container">
         <div className="section-top">
           <div>
-            {workflow.eyebrow && <p className="eyebrow">{workflow.eyebrow}</p>}
-            {workflow.title && <h2>{workflow.title}</h2>}
-            {workflow.description && <p className="workflow-lead">{workflow.description}</p>}
+            {workflow.eyebrow && (
+              <p className="eyebrow">{workflow.eyebrow}</p>
+            )}
+
+            {workflow.title && (
+              <h2>
+                <BrandText text={workflow.title} />
+              </h2>
+            )}
+
+            {workflow.description && (
+              <p className="workflow-lead">
+                <BrandText text={workflow.description} />
+              </p>
+            )}
           </div>
+
           {cta && workflow.ctaHref && (
             <Button href={workflow.ctaHref} variant="text">
-              {workflow.ctaText || "View verified modules"} <span aria-hidden="true">↗</span>
+              {workflow.ctaText || "View verified modules"}{" "}
+              <span aria-hidden="true">↗</span>
             </Button>
           )}
         </div>
@@ -47,27 +65,40 @@ export function WorkflowSection({ cta = false }) {
             <div className="workflow-rule-title">
               <span aria-hidden="true">ℹ️</span> {workflow.ruleTitle}
             </div>
-            <p className="workflow-rule-description">{workflow.ruleDescription}</p>
+
+            <p className="workflow-rule-description">
+              <BrandText text={workflow.ruleDescription} />
+            </p>
           </div>
         )}
 
         <div className="workflow-grid">
           {workflow.steps.map((step, index) => (
-            <div className="workflow-card" key={step.title || index}>
+            <div
+              className="workflow-card"
+              key={step.title || index}
+            >
               <span className="workflow-step-badge">
                 {step.number || String(index + 1).padStart(2, "0")}
               </span>
-              <h3>{step.title}</h3>
-              <p>{step.description}</p>
+
+              <h3>
+                <BrandText text={step.title} />
+              </h3>
+
+              <p>
+                <BrandText text={step.description} />
+              </p>
             </div>
           ))}
         </div>
 
         {workflow.note && (
-          <p className="workflow-note">{workflow.note}</p>
+          <p className="workflow-note">
+            <BrandText text={workflow.note} />
+          </p>
         )}
       </div>
     </section>
   );
 }
-

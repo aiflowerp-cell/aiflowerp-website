@@ -10,10 +10,13 @@
  *
  * DEPENDENCIES:
  * - react (useState)
+ * - next/image
  * - @/content/siteContent
+ * - @/components/ui/BrandText
  *
  * NOTES:
  * - Answers Question 4: What does the actual ERP look like?
+ * - Uses the centralized BrandText renderer for visible "ai flow" brand mentions.
  */
 
 "use client";
@@ -21,6 +24,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import { content } from "@/content/siteContent";
+import { BrandText } from "@/components/ui/BrandText";
 
 export function ErpShowcaseSection() {
   const showcase = content.erpShowcase;
@@ -38,13 +42,29 @@ export function ErpShowcaseSection() {
       <div className="container">
         <div className="section-top">
           <div>
-            {showcase.eyebrow && <p className="eyebrow">{showcase.eyebrow}</p>}
-            {showcase.title && <h2>{showcase.title}</h2>}
-            {showcase.description && <p className="section-lead">{showcase.description}</p>}
+            {showcase.eyebrow && (
+              <p className="eyebrow">{showcase.eyebrow}</p>
+            )}
+
+            {showcase.title && (
+              <h2>
+                <BrandText text={showcase.title} />
+              </h2>
+            )}
+
+            {showcase.description && (
+              <p className="section-lead">
+                <BrandText text={showcase.description} />
+              </p>
+            )}
           </div>
         </div>
 
-        <div className="erp-showcase-tabs" role="tablist" aria-label="ERP Module Screens">
+        <div
+          className="erp-showcase-tabs"
+          role="tablist"
+          aria-label="ERP Module Screens"
+        >
           {modules.map((mod, index) => (
             <button
               key={mod.id || index}
@@ -54,7 +74,7 @@ export function ErpShowcaseSection() {
               className={`erp-tab-btn ${activeTab === index ? "is-active" : ""}`}
               onClick={() => setActiveTab(index)}
             >
-              {mod.title}
+              <BrandText text={mod.title} />
             </button>
           ))}
         </div>
@@ -66,9 +86,14 @@ export function ErpShowcaseSection() {
               <span className="erp-dot" />
               <span className="erp-dot" />
             </div>
-            <span className="erp-frame-title">ai flow ERP — {activeModule.title}</span>
+
+            <span className="erp-frame-title">
+              <BrandText text={`ai flow ERP — ${activeModule.title}`} />
+            </span>
+
             <span style={{ width: "36px" }} />
           </div>
+
           <div className="erp-frame-body">
             {activeModule.image ? (
               <Image
@@ -76,14 +101,26 @@ export function ErpShowcaseSection() {
                 alt={`ai flow ERP - ${activeModule.title}`}
                 width={800}
                 height={500}
-                style={{ width: "100%", height: "auto", borderRadius: "6px" }}
+                style={{
+                  width: "100%",
+                  height: "auto",
+                  borderRadius: "6px",
+                }}
               />
             ) : (
-
               <div className="erp-placeholder-box">
-                <span className="erp-placeholder-tag">Real ERP Screenshot Slot</span>
-                <h3 className="erp-placeholder-title">{activeModule.title}</h3>
-                <p className="erp-placeholder-desc">{activeModule.description}</p>
+                <span className="erp-placeholder-tag">
+                  Real ERP Screenshot Slot
+                </span>
+
+                <h3 className="erp-placeholder-title">
+                  <BrandText text={activeModule.title} />
+                </h3>
+
+                <p className="erp-placeholder-desc">
+                  <BrandText text={activeModule.description} />
+                </p>
+
                 {activeModule.requirement && (
                   <code className="erp-placeholder-req">
                     Requirement: {activeModule.requirement}

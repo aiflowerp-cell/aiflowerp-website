@@ -13,34 +13,31 @@
  * - @/config/business
  * - @/content/siteContent
  * - @/components/ui/Button
+ * - @/components/ui/BrandText
  *
  * NOTES:
  * - Clean Light SaaS visual presentation with verified conversion actions.
+ * - Uses the centralized BrandText renderer for visible "ai flow" brand mentions.
  */
 
 import { business } from "@/config/business";
 import { content } from "@/content/siteContent";
 import { Button } from "@/components/ui/Button";
-
-function renderFormattedText(text) {
-  if (typeof text !== "string") return text;
-  const parts = text.split(/(ai flow)/g);
-  return parts.map((part, index) =>
-    part === "ai flow" ? (
-      <span key={index} className="brand-blue">
-        ai flow
-      </span>
-    ) : (
-      part
-    )
-  );
-}
+import { BrandText } from "@/components/ui/BrandText";
 
 export function ContactSection() {
   const banner = content.contactBanner || {};
+
   const eyebrow = banner.eyebrow || "Schedule a Walkthrough";
-  const title = banner.title || "Ready to see how ai flow manages your cement operations?";
-  const description = banner.description || "Schedule a walkthrough of the platform and see how document-based workflows bring clarity to your business.";
+
+  const title =
+    banner.title ||
+    "Ready to see how ai flow manages your cement operations?";
+
+  const description =
+    banner.description ||
+    "Schedule a walkthrough of the platform and see how document-based workflows bring clarity to your business.";
+
   const ctaText = banner.ctaText || "Book a Demo";
 
   return (
@@ -48,14 +45,42 @@ export function ContactSection() {
       <div className="container contact-grid">
         <div>
           {eyebrow && <p className="eyebrow">{eyebrow}</p>}
-          {title && <h2>{renderFormattedText(title)}</h2>}
-          {description && <p>{renderFormattedText(description)}</p>}
+
+          {title && (
+            <h2>
+              <BrandText text={title} />
+            </h2>
+          )}
+
+          {description && (
+            <p>
+              <BrandText text={description} />
+            </p>
+          )}
         </div>
+
         <div className="contact-actions">
-          <Button href="/contact">{ctaText} →</Button>
+          <Button href="/contact">
+            {ctaText} →
+          </Button>
+
           {business.email && (
-            <a href={`mailto:${business.email}`} style={{ color: "var(--muted)", fontSize: "14px", fontWeight: "500" }}>
-              or email us at <span style={{ color: "var(--primary)" }}>{business.email}</span>
+            <a
+              href={`mailto:${business.email}`}
+              style={{
+                color: "var(--muted)",
+                fontSize: "14px",
+                fontWeight: "500",
+              }}
+            >
+              or email us at{" "}
+              <span
+                style={{
+                  color: "var(--primary)",
+                }}
+              >
+                {business.email}
+              </span>
             </a>
           )}
         </div>
@@ -63,4 +88,3 @@ export function ContactSection() {
     </section>
   );
 }
-

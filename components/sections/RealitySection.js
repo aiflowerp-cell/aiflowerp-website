@@ -9,15 +9,19 @@
  *
  * DEPENDENCIES:
  * - @/content/siteContent
+ * - @/components/ui/BrandText
  *
  * NOTES:
  * - Answers Question 5: What specific problems does it solve?
+ * - Uses the centralized BrandText renderer for visible "ai flow" brand mentions.
  */
 
+import { BrandText } from "@/components/ui/BrandText";
 import { content } from "@/content/siteContent";
 
 export function RealitySection() {
   const reality = content.realitySection;
+
   if (!reality || !reality.challenges || reality.challenges.length === 0) {
     return null;
   }
@@ -27,17 +31,41 @@ export function RealitySection() {
       <div className="container">
         <div className="section-top">
           <div>
-            {reality.eyebrow && <p className="eyebrow">{reality.eyebrow}</p>}
-            {reality.title && <h2>{reality.title}</h2>}
-            {reality.description && <p className="section-lead">{reality.description}</p>}
+            {reality.eyebrow && (
+              <p className="eyebrow">{reality.eyebrow}</p>
+            )}
+
+            {reality.title && (
+              <h2>
+                <BrandText text={reality.title} />
+              </h2>
+            )}
+
+            {reality.description && (
+              <p className="section-lead">
+                <BrandText text={reality.description} />
+              </p>
+            )}
           </div>
         </div>
+
         <div className="reality-grid">
           {reality.challenges.map((challenge, index) => (
-            <div className="reality-card" key={challenge.title || index}>
-              <span className="reality-badge">{challenge.number || String(index + 1).padStart(2, "0")}</span>
-              <h3>{challenge.title}</h3>
-              <p>{challenge.description}</p>
+            <div
+              className="reality-card"
+              key={challenge.title || index}
+            >
+              <span className="reality-badge">
+                {challenge.number || String(index + 1).padStart(2, "0")}
+              </span>
+
+              <h3>
+                <BrandText text={challenge.title} />
+              </h3>
+
+              <p>
+                <BrandText text={challenge.description} />
+              </p>
             </div>
           ))}
         </div>
