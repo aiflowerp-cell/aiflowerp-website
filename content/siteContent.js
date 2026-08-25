@@ -114,21 +114,21 @@ export const content = {
         title: "Executive Dashboard",
         description: "Dashboard KPIs, sales overview, stock position, and verified operational summaries.",
         requirement: "Dashboard screen showing sales metrics, stock positions, and operational status.",
-        image: null,
+         image: "/images/erp/dashboard.png",
       },
       {
         id: "billing",
         title: "Company Billing Ingestion",
         description: "Purchase invoice document upload, extracted data review, and draft voucher creation.",
         requirement: "Purchase invoice entry interface with extracted data fields and draft voucher.",
-        image: null,
+        image: "/images/erp/purchase-invoice-import.png",
       },
       {
         id: "transit",
         title: "Transit Stock Register",
         description: "Listing of company purchase invoices, transit quantities, and pending lifting status.",
         requirement: "Transit stock register showing company invoices, transit quantities, and lifting balances.",
-        image: null,
+        image: "/images/erp/transit-stock-register.png",
       },
       {
         id: "stock",
@@ -142,7 +142,7 @@ export const content = {
         title: "Lifting Management",
         description: "Lifting voucher and dispatch challan matching against purchase vouchers.",
         requirement: "Lifting management screen matching dispatch challans to purchase orders.",
-        image: null,
+        image: "/images/erp/lifting-challan-upload.png",
       },
       {
         id: "ledgers",
