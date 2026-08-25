@@ -34,6 +34,7 @@ export const content = {
     eyebrow: "Built for Cement Reality",
     title: "Designed for the real operational challenges of cement distribution.",
     description: "Generic accounting tools treat cement like simple packaged retail items. ai flow is engineered around the actual commodity workflows of cement dealers.",
+    image: "/images/business/railway-rake-unloading.png",
     challenges: [
       {
         number: "01",
@@ -56,6 +57,7 @@ export const content = {
     eyebrow: "Cement Business Flow",
     title: "One connected workflow for your complete cement business.",
     description: "How a cement dealership operates in reality — from credit limit and company billing to godown stock, sales, and collection.",
+    image: "/images/business/godown-loading.png",
     ruleTitle: "Company Billing is NOT Physical Stock.",
     ruleDescription: "When a cement company issues an invoice, it creates Transit Stock. Material only enters Physical Stock when lifting occurs and goods are received in the godown. ai flow keeps transit and physical inventory as separate operational states, with their quantities tracked through the corresponding workflows.",
     ctaHref: "/services",

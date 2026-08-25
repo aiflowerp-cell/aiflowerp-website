@@ -6,10 +6,12 @@
  * RESPONSIBILITIES:
  * - Render section header (eyebrow, title, description)
  * - Render prominent 'Company Billing is NOT Physical Stock' callout box
+ * - Render real cement godown/loading visual
  * - Render 8-step real-world cement process cards
  * - Render clarifying footer note distinguishing conceptual flow from software modules
  *
  * DEPENDENCIES:
+ * - next/image
  * - @/content/siteContent
  * - @/components/ui/Button
  * - @/components/ui/BrandText
@@ -19,6 +21,7 @@
  * - Uses the centralized BrandText renderer for visible "ai flow" brand mentions.
  */
 
+import Image from "next/image";
 import { content } from "@/content/siteContent";
 import { Button } from "@/components/ui/Button";
 import { BrandText } from "@/components/ui/BrandText";
@@ -69,6 +72,24 @@ export function WorkflowSection({ cta = false }) {
             <p className="workflow-rule-description">
               <BrandText text={workflow.ruleDescription} />
             </p>
+          </div>
+        )}
+
+        {workflow.image && (
+          <div className="workflow-image">
+            <Image
+              src={workflow.image}
+              alt="Cement bags and truck loading at a cement godown"
+              width={616}
+              height={247}
+              sizes="(max-width: 768px) 100vw, 780px"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                borderRadius: "12px",
+              }}
+            />
           </div>
         )}
 

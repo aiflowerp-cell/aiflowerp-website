@@ -5,9 +5,11 @@
  *
  * RESPONSIBILITIES:
  * - Render section heading (eyebrow, title, lead description)
+ * - Render the real cement-business railway-rake visual
  * - Render 3 core cement challenge cards (Transit vs Godown Stock, Lifting & Challan Processing, Connected Sales & Ledgers)
  *
  * DEPENDENCIES:
+ * - next/image
  * - @/content/siteContent
  * - @/components/ui/BrandText
  *
@@ -16,6 +18,7 @@
  * - Uses the centralized BrandText renderer for visible "ai flow" brand mentions.
  */
 
+import Image from "next/image";
 import { BrandText } from "@/components/ui/BrandText";
 import { content } from "@/content/siteContent";
 
@@ -48,6 +51,24 @@ export function RealitySection() {
             )}
           </div>
         </div>
+
+        {reality.image && (
+          <div className="reality-image">
+            <Image
+              src={reality.image}
+              alt="Cement bags being unloaded from a railway freight wagon"
+              width={1600}
+              height={900}
+              sizes="(max-width: 768px) 100vw, 1200px"
+              style={{
+                width: "100%",
+                height: "auto",
+                display: "block",
+                borderRadius: "12px",
+              }}
+            />
+          </div>
+        )}
 
         <div className="reality-grid">
           {reality.challenges.map((challenge, index) => (
