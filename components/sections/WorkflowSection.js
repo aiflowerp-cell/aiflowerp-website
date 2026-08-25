@@ -5,7 +5,7 @@
  *
  * RESPONSIBILITIES:
  * - Render section header (eyebrow, title, description)
- * - Render prominent 'Company Billing is NOT Physical Stock' callout box
+ * - Render image and 'Company Billing is NOT Physical Stock' callout side-by-side
  * - Render real cement godown/loading visual
  * - Render 8-step real-world cement process cards
  * - Render clarifying footer note distinguishing conceptual flow from software modules
@@ -63,35 +63,39 @@ export function WorkflowSection({ cta = false }) {
           )}
         </div>
 
-        {workflow.ruleTitle && (
-          <div className="workflow-rule-callout">
-            <div className="workflow-rule-title">
-              <span aria-hidden="true">ℹ️</span> {workflow.ruleTitle}
+        <div className="workflow-feature">
+          {workflow.image && (
+            <div className="workflow-image">
+              <Image
+                src={workflow.image}
+                alt="Cement bags and truck loading at a cement godown"
+                width={616}
+                height={247}
+                sizes="(max-width: 768px) 100vw, 58vw"
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  display: "block",
+                  borderRadius: "12px",
+                }}
+              />
             </div>
+          )}
 
-            <p className="workflow-rule-description">
-              <BrandText text={workflow.ruleDescription} />
-            </p>
-          </div>
-        )}
+          {workflow.ruleTitle && (
+            <div className="workflow-rule-callout">
+              <div className="workflow-rule-title">
+                <span aria-hidden="true">ℹ️</span>{" "}
+                {workflow.ruleTitle}
+              </div>
 
-        {workflow.image && (
-          <div className="workflow-image">
-            <Image
-              src={workflow.image}
-              alt="Cement bags and truck loading at a cement godown"
-              width={616}
-              height={247}
-              sizes="(max-width: 768px) 100vw, 780px"
-              style={{
-                width: "100%",
-                height: "auto",
-                display: "block",
-                borderRadius: "12px",
-              }}
-            />
-          </div>
-        )}
+              <p className="workflow-rule-description">
+                <BrandText text={workflow.ruleDescription} />
+              </p>
+            </div>
+          )}
+        </div>
 
         <div className="workflow-grid">
           {workflow.steps.map((step, index) => (

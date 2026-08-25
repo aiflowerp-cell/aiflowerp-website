@@ -144,7 +144,7 @@ export const content = {
         title: "Lifting Management",
         description: "Lifting voucher and dispatch challan matching against purchase vouchers.",
         requirement: "Lifting management screen matching dispatch challans to purchase orders.",
-        image: "/images/erp/lifting-challan-upload.png",
+        image: "/images/erp/lifting-challan-upload-v2.png",
       },
       {
         id: "ledgers",
