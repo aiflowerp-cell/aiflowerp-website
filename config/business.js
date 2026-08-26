@@ -36,7 +36,7 @@ export const business = {
   email: "aiflowerp@gmail.com",
   address: null,
   workingHours: null,
-  logo: clientAssets.logo || "/images/client/logo/LogoColorNoText.jpeg",
+  logo: clientAssets.logo || "/images/client/logo/LogoColorNoText-Transparent-Background.png",
   primaryColor: "#2563eb",
   secondaryColor: "#111827",
   brandNameTextColor: "#2563eb",
