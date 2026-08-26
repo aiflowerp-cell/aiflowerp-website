@@ -861,10 +861,28 @@ img {
   scroll-margin-top: 90px;
 }
 
+.reality-feature {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 48px;
+}
+
+.reality-copy {
+  max-width: 620px;
+}
+
+.reality-copy h2 {
+  max-width: 620px;
+}
+
+.reality-copy .section-lead {
+  max-width: 600px;
+}
+
 .reality-image {
   width: 100%;
   height: 360px;
-  margin-top: 36px;
   overflow: hidden;
 
   border: 1px solid var(--line);
@@ -880,16 +898,14 @@ img {
   display: block;
 
   object-fit: cover;
-  object-position: center 45%;
+  object-position: center;
 }
-
-
 
 .reality-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
-  margin-top: 38px;
+  margin-top: 48px;
 }
 
 .reality-card {
@@ -947,6 +963,7 @@ img {
   font-size: 14px;
   line-height: 1.65;
 }
+
 
 /* =========================================================
    12. WORKFLOW SECTION (SURFACE: LAYERED COOL SLATE)
@@ -2001,6 +2018,19 @@ img {
 
   .hero-copy {
     max-width: 620px;
+  }
+
+  .reality-feature {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .reality-copy {
+    max-width: 720px;
+  }
+
+  .reality-image {
+    height: 360px;
   }
 
   .reality-grid,
