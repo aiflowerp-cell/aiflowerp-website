@@ -46,16 +46,26 @@ export function Footer() {
         </div>
 
         <div className="footer-col">
-          <p className="footer-label">ERP</p>
+          <p className="footer-label">Systems</p>
           <div className="footer-links">
-            {business.appUrl && (
+            {(business.erpUrl || business.appUrl) && (
               <a
-                href={business.appUrl}
+                href={business.erpUrl || business.appUrl}
                 target="_blank"
                 rel="noopener noreferrer"
                 style={{ color: "var(--primary)", fontWeight: "500" }}
               >
                 Open ERP ↗
+              </a>
+            )}
+            {business.shoppingUrl && (
+              <a
+                href={business.shoppingUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ color: "var(--primary)", fontWeight: "500" }}
+              >
+                Open Shopping ↗
               </a>
             )}
             <Link href="/contact" style={{ fontWeight: "600", color: "var(--ink)" }}>

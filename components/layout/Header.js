@@ -67,15 +67,26 @@ export function Header() {
               {item.label}
             </Link>
           ))}
-          {business.appUrl && (
+          {(business.erpUrl || business.appUrl) && (
             <a
-              href={business.appUrl}
+              href={business.erpUrl || business.appUrl}
               className="header-erp-link"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
             >
               Open ERP ↗
+            </a>
+          )}
+          {business.shoppingUrl && (
+            <a
+              href={business.shoppingUrl}
+              className="header-erp-link"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+            >
+              Open Shopping ↗
             </a>
           )}
           {business.headerCta?.label && (

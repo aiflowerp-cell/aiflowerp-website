@@ -21,6 +21,8 @@
 
 import { clientAssets } from "./clientAssets.js";
 
+const isDev = process.env.NODE_ENV === "development";
+
 export const business = {
   name: "ai flow",
   shortName: "ai flow",
@@ -40,7 +42,9 @@ export const business = {
   primaryColor: "#2563eb",
   secondaryColor: "#111827",
   brandNameTextColor: "#2563eb",
-  appUrl: "https://erp.aiflowerp.in",
+  erpUrl: process.env.NEXT_PUBLIC_ERP_URL || (isDev ? "http://localhost:3100" : "https://erp.aiflowerp.in"),
+  shoppingUrl: process.env.NEXT_PUBLIC_SHOPPING_URL || (isDev ? "http://localhost:3200" : "https://shop.aiflowerp.in"),
+  appUrl: process.env.NEXT_PUBLIC_ERP_URL || (isDev ? "http://localhost:3100" : "https://erp.aiflowerp.in"),
   headerCta: {
     label: "Book a Demo",
     href: "/contact",
