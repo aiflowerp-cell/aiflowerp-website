@@ -20,6 +20,7 @@
 
 import Link from "next/link";
 import { business, navigation } from "@/config/business";
+import { BrandText } from "@/components/ui/BrandText";
 
 export function Footer() {
   return (
@@ -27,10 +28,10 @@ export function Footer() {
       <div className="container footer-grid">
         <div className="footer-col-brand">
           <Link className="footer-brand" href="/">
-            {business.name}
+            <BrandText text={business.name} />
           </Link>
           <p className="footer-brand-desc">
-            An ERP designed around the real workflow of a cement business.
+            Complete Business & Commerce Solutions. One parent technology brand offering two specialized platforms for enterprise management and digital commerce.
           </p>
         </div>
 
@@ -46,16 +47,16 @@ export function Footer() {
         </div>
 
         <div className="footer-col">
-          <p className="footer-label">Systems</p>
+          <p className="footer-label">Our Products</p>
           <div className="footer-links">
             {(business.erpUrl || business.appUrl) && (
               <a
                 href={business.erpUrl || business.appUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "var(--primary)", fontWeight: "500" }}
+                className="footer-product-link is-erp"
               >
-                Open ERP ↗
+                <BrandText text="ai flow ERP" /> ↗
               </a>
             )}
             {business.shoppingUrl && (
@@ -63,11 +64,14 @@ export function Footer() {
                 href={business.shoppingUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                style={{ color: "var(--primary)", fontWeight: "500" }}
+                className="footer-product-link is-kinny"
               >
-                Open Shopping ↗
+                <BrandText text="Kinny Cart" /> ↗
               </a>
             )}
+            <Link href="/products" style={{ color: "var(--muted-dark)" }}>
+              Platform Architecture
+            </Link>
             <Link href="/contact" style={{ fontWeight: "600", color: "var(--ink)" }}>
               Book a Demo
             </Link>
@@ -75,19 +79,22 @@ export function Footer() {
         </div>
 
         <div className="footer-col">
-          <p className="footer-label">Contact</p>
+          <p className="footer-label">Inquiries</p>
           <div className="footer-links">
             {business.email && (
               <a href={`mailto:${business.email}`} className="footer-email">
                 {business.email}
               </a>
             )}
+            <span style={{ fontSize: "13px", color: "var(--muted)", marginTop: "4px" }}>
+              Enterprise & Commerce Platforms
+            </span>
           </div>
         </div>
       </div>
 
       <div className="container footer-bottom">
-        <span>© {new Date().getFullYear()} {business.name}. All rights reserved.</span>
+        <span>© {new Date().getFullYear()} <BrandText text={business.name} />. All rights reserved.</span>
       </div>
     </footer>
   );

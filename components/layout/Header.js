@@ -81,12 +81,12 @@ export function Header() {
           {business.shoppingUrl && (
             <a
               href={business.shoppingUrl}
-              className="header-erp-link"
+              className="header-erp-link header-kinny-link"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
             >
-              Open Shopping ↗
+              Open Kinny Cart ↗
             </a>
           )}
           {business.headerCta?.label && (

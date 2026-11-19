@@ -30,8 +30,48 @@ import { business } from "@/config/business";
 import { content } from "@/content/siteContent";
 
 export const metadata = {
-  title: business.name,
-  description: business.description || content.home?.description || "",
+  metadataBase: new URL("https://aiflowerp.in"),
+  title: {
+    default: "ai flow — Complete Business & Commerce Solutions",
+    template: "%s | ai flow",
+  },
+  description:
+    "One platform, two powerful systems. ai flow offers ai flow ERP for complete enterprise operations and cement distribution, and Kinny Cart for digital retail commerce.",
+  keywords: [
+    "ai flow",
+    "ai flow ERP",
+    "Kinny Cart",
+    "Cement Dealer ERP",
+    "Digital Commerce Platform",
+    "Business Management System",
+    "Transit Stock Management",
+    "Retail Storefront",
+  ],
+  authors: [{ name: "ai flow" }],
+  openGraph: {
+    title: "ai flow — Complete Business & Commerce Solutions",
+    description:
+      "Run your business, manage operations and connect with customers through intelligent digital solutions: ai flow ERP & Kinny Cart.",
+    url: "https://aiflowerp.in",
+    siteName: "ai flow",
+    images: [
+      {
+        url: "/images/client/logo/LogoColorNoText-Transparent-Background.png",
+        width: 512,
+        height: 512,
+        alt: "ai flow logo",
+      },
+    ],
+    locale: "en_IN",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "ai flow — Complete Business & Commerce Solutions",
+    description:
+      "Run your business, manage operations and connect with customers through intelligent digital solutions: ai flow ERP & Kinny Cart.",
+    images: ["/images/client/logo/LogoColorNoText-Transparent-Background.png"],
+  },
 };
 
 export default function RootLayout({ children }) {
