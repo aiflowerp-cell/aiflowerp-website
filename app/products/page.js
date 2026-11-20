@@ -21,11 +21,18 @@
 
 import { PageIntro } from "@/components/layout/PageIntro";
 import { EvidenceSection } from "@/components/sections/EvidenceSection";
+import { WorkflowSection } from "@/components/sections/WorkflowSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { Card } from "@/components/ui/Card";
-import { Button } from "@/components/ui/Button";
+import { BrandText } from "@/components/ui/BrandText";
 import { business } from "@/config/business";
 import { content } from "@/content/siteContent";
+
+export const metadata = {
+  title: "Platform Architecture — ai flow ERP & Kinny Cart",
+  description:
+    "Explore the enterprise architecture powering ai flow ERP and Kinny Cart across multi-tenant isolation, OCR ingestion, accounting integrity, and digital commerce.",
+};
 
 export default function PlatformPage() {
   const platform = content.platformPage || {};
@@ -52,23 +59,37 @@ export default function PlatformPage() {
             <div className="platform-systems-grid">
               {systems.map((sys) => {
                 const targetUrl = business[sys.urlKey] || sys.url;
+                const isKinny = sys.id === "kinny-cart" || sys.id === "shopping";
                 return (
-                  <Card className="pillar-card system-card" key={sys.id || sys.title}>
-                    {sys.badge && <span className="pillar-number">{sys.badge}</span>}
-                    <h3 style={{ fontSize: "20px", marginTop: "4px" }}>{sys.title}</h3>
-                    <p style={{ fontWeight: "600", color: "var(--primary)", fontSize: "14px" }}>
+                  <Card className={`pillar-card system-card ${isKinny ? "is-kinny" : ""}`} key={sys.id || sys.title}>
+                    {sys.badge && (
+                      <span className={`pillar-number ${isKinny ? "is-kinny-badge" : ""}`}>
+                        {sys.badge}
+                      </span>
+                    )}
+                    <h3 style={{ fontSize: "20px", marginTop: "6px" }}>
+                      <BrandText text={sys.title} />
+                    </h3>
+                    <p
+                      style={{
+                        fontWeight: "600",
+                        color: isKinny ? "var(--brand-commerce-red, #dc2626)" : "var(--primary)",
+                        fontSize: "14px",
+                        marginTop: "2px",
+                      }}
+                    >
                       {sys.tagline}
                     </p>
-                    <p style={{ marginTop: "4px", lineHeight: "1.6" }}>{sys.description}</p>
-                    <div style={{ marginTop: "auto", paddingTop: "18px" }}>
-                      <Button
+                    <p style={{ marginTop: "8px", lineHeight: "1.6" }}>{sys.description}</p>
+                    <div style={{ marginTop: "auto", paddingTop: "20px" }}>
+                      <a
                         href={targetUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        variant={sys.id === "erp" ? "primary" : "secondary"}
+                        className={`button ${isKinny ? "button-kinny" : "button-primary"}`}
                       >
-                        {sys.ctaLabel} →
-                      </Button>
+                        <BrandText text={sys.ctaLabel} />
+                      </a>
                     </div>
                   </Card>
                 );
@@ -77,7 +98,8 @@ export default function PlatformPage() {
           </div>
         </section>
       )}
-      <EvidenceSection />
+
+      {/* Shared and Product-Specific Architectural Capabilities */}
       {pillars.length > 0 && (
         <section className="section platform-pillars-section">
           <div className="container">
@@ -89,19 +111,47 @@ export default function PlatformPage() {
               )}
             </div>
             <div className="platform-pillars-grid">
-              {pillars.map((pillar, index) => (
-                <Card className="pillar-card" key={pillar.title || index}>
-                  <span className="pillar-number">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <h3>{pillar.title}</h3>
-                  <p>{pillar.description}</p>
-                </Card>
-              ))}
+              {pillars.map((pillar, index) => {
+                const isKinnyPillar =
+                  pillar.category === "kinny cart" ||
+                  pillar.category === "Kinny Cart";
+                const isErpPillar = pillar.category === "ai flow ERP";
+                return (
+                  <Card className="pillar-card" key={pillar.title || index}>
+                    <div className="pillar-card-top-row">
+                      <span className="pillar-number">
+                        {String(index + 1).padStart(2, "0")}
+                      </span>
+                      {pillar.category && (
+                        <span
+                          className={`pillar-tag ${
+                            isKinnyPillar
+                              ? "is-kinny-tag"
+                              : isErpPillar
+                              ? "is-erp-tag"
+                              : "is-shared-tag"
+                          }`}
+                        >
+                          <BrandText text={pillar.category} />
+                        </span>
+                      )}
+                    </div>
+                    <h3>{pillar.title}</h3>
+                    <p>{pillar.description}</p>
+                  </Card>
+                );
+              })}
             </div>
           </div>
         </section>
       )}
+
+      {/* Evidence-Driven Document Processing Workflow */}
+      <EvidenceSection />
+
+      {/* Real-World Operational Workflow Grounding */}
+      <WorkflowSection cta={false} />
+
       <ContactSection />
     </>
   );

@@ -27,6 +27,7 @@ import Image from "next/image";
 import { useState } from "react";
 import { business, navigation } from "@/config/business";
 import { Button } from "@/components/ui/Button";
+import { BrandText } from "@/components/ui/BrandText";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -75,7 +76,7 @@ export function Header() {
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
             >
-              Open ERP ↗
+              Open <BrandText text="ai flow ERP" /> ↗
             </a>
           )}
           {business.shoppingUrl && (
@@ -86,7 +87,7 @@ export function Header() {
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
             >
-              Open Kinny Cart ↗
+              Open <BrandText text="Kinny Cart" /> ↗
             </a>
           )}
           {business.headerCta?.label && (

@@ -27,6 +27,7 @@
 
 import { Hero } from "@/components/sections/Hero";
 import { TwoProductsSection } from "@/components/sections/TwoProductsSection";
+import { RealitySection } from "@/components/sections/RealitySection";
 import { WhyAiFlowSection } from "@/components/sections/WhyAiFlowSection";
 import { WhoWeServeSection } from "@/components/sections/WhoWeServeSection";
 import { PlatformPreviewSection } from "@/components/sections/PlatformPreviewSection";
@@ -36,25 +37,28 @@ import { ContactSection } from "@/components/sections/ContactSection";
 export default function Home() {
   return (
     <>
-      {/* 2. New Corporate Hero Section */}
+      {/* 2. Corporate Hero Section */}
       <Hero />
 
-      {/* 3. Our Two Products — ai flow ERP and Kinny Cart */}
+      {/* 3. Our Two Products — ai flow ERP and kinny cart */}
       <TwoProductsSection />
 
-      {/* 4. Why ai flow — Key Technology Advantages */}
+      {/* 4. Industrial Supply Chain Reality — Railway Rake Logistics to Software */}
+      <RealitySection />
+
+      {/* 5. Why ai flow — Key Technology Advantages */}
       <WhyAiFlowSection />
 
-      {/* 5. Who We Serve — Dealers, Distributors, Merchants and Customers */}
+      {/* 6. Who We Serve — Dealers, Distributors, Merchants and Customers */}
       <WhoWeServeSection />
 
-      {/* 6. Product Screenshots / Platform Preview */}
+      {/* 7. Product Screenshots / Platform Preview */}
       <PlatformPreviewSection />
 
-      {/* 7. About ai flow */}
+      {/* 8. About ai flow — Parent Technology Brand Story */}
       <CorporateAboutSection />
 
-      {/* 8. Contact / Book a Demo */}
+      {/* 9. Contact / Book a Demo */}
       <ContactSection />
     </>
   );

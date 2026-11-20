@@ -71,6 +71,7 @@ export function WorkflowSection({ cta = false }) {
                 alt="Cement bags and truck loading at a cement godown"
                 width={616}
                 height={247}
+                priority
                 sizes="(max-width: 768px) 100vw, 58vw"
                 style={{
                   width: "100%",

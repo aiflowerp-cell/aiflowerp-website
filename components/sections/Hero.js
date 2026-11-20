@@ -58,7 +58,7 @@ export function Hero() {
       alt: "Kinny Cart Digital Commerce Platform",
       url: business.shoppingUrl || "https://shop.aiflowerp.in/",
       tag: "Kinny Cart Online Store",
-      ctaText: "Launch Kinny Cart ↗",
+      ctaText: "Open Kinny Cart ↗",
       isKinny: true,
     },
   ];
@@ -153,7 +153,7 @@ export function Hero() {
                 className="hero-frame-external-link"
                 title={`Open ${currentSystem.label} in new tab`}
               >
-                {currentSystem.id === "erp" ? "Launch ERP ↗" : "Launch Kinny Cart ↗"}
+                {currentSystem.id === "erp" ? "Open ai flow ERP ↗" : "Open Kinny Cart ↗"}
               </a>
             </div>
 

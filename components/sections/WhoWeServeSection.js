@@ -60,7 +60,7 @@ export function WhoWeServeSection() {
                     href={seg.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className={`audience-system-link ${seg.system.includes("Kinny Cart") ? "is-kinny-cart" : "is-aiflow"}`}
+                    className={`audience-system-link ${seg.system.toLowerCase().includes("kinny") ? "is-kinny-cart" : "is-aiflow"}`}
                   >
                     <BrandText text={seg.system} /> ↗
                   </a>

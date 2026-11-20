@@ -2,13 +2,12 @@
  * FILE: components/ui/BrandText.js
  * PURPOSE:
  * Centralized rendering primitive for official brand wordmarks:
- * - 'ai flow' (strictly lowercase, bold, #2563EB blue)
- * - 'Kinny Cart' (strictly title case, bold, #059669 commerce green)
+ * - 'ai flow' (strictly lowercase, bold, #2563EB enterprise blue)
+ * - 'Kinny Cart' (Title Case with space, bold, #DC2626 retail red theme)
  *
  * RESPONSIBILITIES:
  * - Render 'ai flow' consistently in lowercase with blue brand wordmark styling
- * - Render 'Kinny Cart' consistently in title case with green commerce wordmark styling
- * - Guarantee zero customer-facing display of 'AI FLOW', 'Ai Flow', 'aiflow', or 'KinniyaCart'
+ * - Render 'Kinny Cart' consistently in Title Case with space and red commerce wordmark styling
  * - Maintain identical font weight and visual balance between both coordinated brand identities
  *
  * DEPENDENCIES:
@@ -18,9 +17,9 @@
 export function BrandText({ text }) {
   if (typeof text !== "string") return text;
 
-  // Pattern matches all casings and variations of ai flow and Kinny Cart / KinniyaCart
+  // Pattern matches all casings and variations of ai flow and kinny cart / KinniyaCart
   const parts = text.split(
-    /(ai\s*flow|AI\s*FLOW|Ai\s*Flow|aiflow|Kinny\s*Cart|KinniyaCart|KINNIYACART|Kinniya\s*Cart)/gi
+    /(ai\s*flow|AI\s*FLOW|Ai\s*Flow|aiflow|Kinny\s*Cart|KINNY\s*CART|kinny\s*cart|KinniyaCart|KINNIYACART|Kinniya\s*Cart)/gi
   );
 
   return parts.map((part, index) => {

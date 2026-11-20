@@ -19,9 +19,15 @@
 
 import { PageIntro } from "@/components/layout/PageIntro";
 import { AboutSection } from "@/components/sections/AboutSection";
-import { Testimonials } from "@/components/sections/Testimonials";
+import { AboutProductsOverview } from "@/components/sections/AboutProductsOverview";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { content } from "@/content/siteContent";
+
+export const metadata = {
+  title: "About ai flow — Engineering Intelligent Systems for Modern Trade",
+  description:
+    "Learn about ai flow, the corporate technology brand behind two specialized platforms: ai flow ERP for business operations and Kinny Cart for digital local commerce.",
+};
 
 export default function AboutPage() {
   return (
@@ -32,7 +38,7 @@ export default function AboutPage() {
         description={content.about.description}
       />
       <AboutSection showHeading={false} />
-      <Testimonials />
+      <AboutProductsOverview />
       <ContactSection />
     </>
   );

@@ -66,7 +66,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="footer-product-link is-kinny"
               >
-                <BrandText text="Kinny Cart" /> ↗
+                <BrandText text="kinny cart" /> ↗
               </a>
             )}
             <Link href="/products" style={{ color: "var(--muted-dark)" }}>

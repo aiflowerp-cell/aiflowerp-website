@@ -22,6 +22,12 @@ import { ServicesSection } from "@/components/sections/ServicesSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { content } from "@/content/siteContent";
 
+export const metadata = {
+  title: "Verified Capabilities — ai flow ERP",
+  description:
+    "Explore the verified operational modules and accounting capabilities that power the ai flow ERP platform.",
+};
+
 export default function ServicesPage() {
   const { servicesPage } = content;
 
