@@ -42,3 +42,15 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 desktop.ini
+
+# scratch & temporary development artifacts
+scripts/*.mjs
+scripts/*.png
+scripts/cropped_phones/
+scripts/erp_light_captures/
+scripts/light_phones/
+scripts/red_phones/
+scripts/test_ratio_crops/
+scripts/test_screen_crops/
+public/images/erp/original_source/
+public/images/erp/original_cropped_*.png

@@ -79,17 +79,6 @@ export function Header() {
               Open <BrandText text="ai flow ERP" /> ↗
             </a>
           )}
-          {business.shoppingUrl && (
-            <a
-              href={business.shoppingUrl}
-              className="header-erp-link header-kinny-link"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-            >
-              Open <BrandText text="Kinny Cart" /> ↗
-            </a>
-          )}
           {business.headerCta?.label && (
             <Button href={business.headerCta.href || "/contact"} onClick={() => setOpen(false)}>
               {business.headerCta.label}

@@ -27,7 +27,7 @@ export const business = {
   name: "ai flow",
   shortName: "ai flow",
   tagline: "Complete Business & Commerce Solutions",
-  description: "ai flow is a technology platform offering two distinct business solutions: ai flow ERP for complete enterprise operations and cement distribution, and Kinny Cart for digital commerce.",
+  description: "ai flow is a technology platform offering two distinct business solutions: ai flow ERP for complete enterprise operations and cement distribution, and KinnyCart for digital commerce.",
   owner: null,
   foundedYear: null,
   locationTagline: null,

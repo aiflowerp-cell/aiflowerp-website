@@ -29,6 +29,12 @@ import { WhatsAppButton } from "@/components/sections/WhatsAppButton";
 import { business } from "@/config/business";
 import { content } from "@/content/siteContent";
 
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+};
+
 export const metadata = {
   metadataBase: new URL("https://aiflowerp.in"),
   title: {
@@ -36,11 +42,11 @@ export const metadata = {
     template: "%s | ai flow",
   },
   description:
-    "One platform, two powerful systems. ai flow offers ai flow ERP for complete enterprise operations and cement distribution, and kinny cart for digital retail commerce.",
+    "One platform, two powerful systems. ai flow offers ai flow ERP for complete enterprise operations and cement distribution, and KinnyCart for digital retail commerce.",
   keywords: [
     "ai flow",
     "ai flow ERP",
-    "kinny cart",
+    "KinnyCart",
     "Cement Dealer ERP",
     "Digital Commerce Platform",
     "Business Management System",
@@ -51,7 +57,7 @@ export const metadata = {
   openGraph: {
     title: "ai flow — Complete Business & Commerce Solutions",
     description:
-      "Run your business, manage operations and connect with customers through intelligent digital solutions: ai flow ERP & kinny cart.",
+      "Run your business, manage operations and connect with customers through intelligent digital solutions: ai flow ERP & KinnyCart.",
     url: "https://aiflowerp.in",
     siteName: "ai flow",
     images: [
@@ -69,7 +75,7 @@ export const metadata = {
     card: "summary_large_image",
     title: "ai flow — Complete Business & Commerce Solutions",
     description:
-      "Run your business, manage operations and connect with customers through intelligent digital solutions: ai flow ERP & kinny cart.",
+      "Run your business, manage operations and connect with customers through intelligent digital solutions: ai flow ERP & KinnyCart.",
     images: ["/images/client/logo/LogoColorNoText-Transparent-Background.png"],
   },
 };

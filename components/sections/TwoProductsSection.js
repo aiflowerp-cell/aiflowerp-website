@@ -27,6 +27,7 @@ import Image from "next/image";
 import { content } from "@/content/siteContent";
 import { business } from "@/config/business";
 import { BrandText } from "@/components/ui/BrandText";
+import { MasterLaptop } from "@/components/ui/MasterLaptop";
 
 export function TwoProductsSection() {
   const { twoProducts } = content;
@@ -69,26 +70,23 @@ export function TwoProductsSection() {
 
             {/* 4. Authentic product screenshot */}
             <div className="product-screen-frame">
-              <div className="product-frame-bar">
-                <div className="erp-dots" aria-hidden="true">
-                  <span className="erp-dot" />
-                  <span className="erp-dot" />
-                  <span className="erp-dot" />
+              <div className="product-device-bar">
+                <div className="product-device-badge-row">
+                  <span className="product-device-spec-pill">Desktop Enterprise Web Application</span>
                 </div>
-                <span className="product-frame-title">erp.aiflowerp.in</span>
-                <span className="product-frame-status">● Live System</span>
+                <div className="product-device-status-row">
+                  <span className="product-device-domain">erp.aiflowerp.in/dashboard</span>
+                  <span className="product-device-sep">•</span>
+                  <span className="product-device-status-live">
+                    <span className="device-pulse-dot" aria-hidden="true" /> Live System · Expanded Navigation
+                  </span>
+                </div>
               </div>
               <div className="product-frame-image">
-                <Image
-                  src={erp.image}
-                  alt="ai flow ERP Executive Dashboard"
-                  width={960}
-                  height={540}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                  }}
+                <MasterLaptop
+                  screenSrc="/images/erp/screens/screen-dashboard-expanded.png"
+                  alt="ai flow ERP Executive Dashboard with Expanded Navigation inside Platinum Silver Laptop"
+                  priority
                 />
               </div>
             </div>
@@ -130,37 +128,104 @@ export function TwoProductsSection() {
               </div>
 
               {/* 2. Product name */}
-              <h3 className="product-card-title is-kinny">
-                <BrandText text={shopping.name || "Kinny Cart"} />
-              </h3>
+              <div className="product-card-title-row">
+                <h3 className="product-card-title is-kinny">
+                  <Image
+                    src="/images/brands/kinnycart/kinnycart-logo-horizontal.png"
+                    alt="KinnyCart"
+                    width={136}
+                    height={40}
+                    className="product-card-brand-logo"
+                    priority
+                  />
+                </h3>
+              </div>
 
               {/* 3. Short description */}
               <p className="product-card-desc">{shopping.description}</p>
             </div>
 
-            {/* 4. Authentic product screenshot */}
-            <div className="product-screen-frame">
-              <div className="product-frame-bar">
-                <div className="erp-dots" aria-hidden="true">
-                  <span className="erp-dot" />
-                  <span className="erp-dot" />
-                  <span className="erp-dot" />
+            {/* 4. Exactly THREE Independent Smartphone Frames */}
+            <div className="product-three-phones-frame">
+              <div className="product-device-bar is-kinny">
+                <div className="product-device-badge-row">
+                  <span className="product-device-spec-pill is-kinny">Mobile-First Digital Commerce · 3 Live Screens</span>
                 </div>
-                <span className="product-frame-title">shop.aiflowerp.in</span>
-                <span className="product-frame-status is-kinny">● Live Platform</span>
+                <div className="product-device-status-row">
+                  <span className="product-device-domain">shop.aiflowerp.in</span>
+                  <span className="product-device-sep">•</span>
+                  <span className="product-device-status-live is-kinny">
+                    <span className="device-pulse-dot is-kinny" aria-hidden="true" /> 3 Live Mobile Screens
+                  </span>
+                </div>
               </div>
-              <div className="product-frame-image">
-                <Image
-                  src={shopping.image}
-                  alt="Kinny Cart Digital Commerce Storefront"
-                  width={960}
-                  height={540}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                  }}
-                />
+
+              <div className="product-three-phones-grid">
+                {/* Mobile 1 — Storefront */}
+                <div className="product-phone-item">
+                  <div className="product-phone-mockup-frame">
+                    <Image
+                      src="/images/shopping/phone-1-storefront.png"
+                      alt="KinnyCart Mobile 1 — Merchant Storefront"
+                      width={360}
+                      height={720}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        display: "block",
+                      }}
+                    />
+                  </div>
+                  <div className="product-phone-label">
+                    <span className="product-phone-tag">Mobile 1</span>
+                    <span className="product-phone-title">Storefront</span>
+                    <span className="product-phone-sub">JP Kirana · Search</span>
+                  </div>
+                </div>
+
+                {/* Mobile 2 — Product Catalogue */}
+                <div className="product-phone-item">
+                  <div className="product-phone-mockup-frame">
+                    <Image
+                      src="/images/shopping/phone-2-catalogue.png"
+                      alt="KinnyCart Mobile 2 — FMCG Product Catalogue"
+                      width={360}
+                      height={720}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        display: "block",
+                      }}
+                    />
+                  </div>
+                  <div className="product-phone-label">
+                    <span className="product-phone-tag">Mobile 2</span>
+                    <span className="product-phone-title">Catalogue</span>
+                    <span className="product-phone-sub">2-Col · Red + ADD</span>
+                  </div>
+                </div>
+
+                {/* Mobile 3 — Cart / Checkout */}
+                <div className="product-phone-item">
+                  <div className="product-phone-mockup-frame">
+                    <Image
+                      src="/images/shopping/phone-3-cart.png"
+                      alt="KinnyCart Mobile 3 — Smart Cart & Checkout"
+                      width={360}
+                      height={720}
+                      style={{
+                        width: "100%",
+                        height: "auto",
+                        display: "block",
+                      }}
+                    />
+                  </div>
+                  <div className="product-phone-label">
+                    <span className="product-phone-tag">Mobile 3</span>
+                    <span className="product-phone-title">Cart / Checkout</span>
+                    <span className="product-phone-sub">Steppers · Bill ₹870</span>
+                  </div>
+                </div>
               </div>
             </div>
 
@@ -186,7 +251,16 @@ export function TwoProductsSection() {
                   rel="noopener noreferrer"
                   className="button button-kinny product-cta-btn"
                 >
-                  <BrandText text={shopping.ctaText} />
+                  <Image
+                    src="/images/brands/kinnycart/kinnycart-storefront-symbol.png"
+                    alt=""
+                    width={16}
+                    height={16}
+                    className="button-kinny-icon"
+                    aria-hidden="true"
+                    style={{ marginRight: "6px" }}
+                  />
+                  <span>Open KinnyCart ↗</span>
                 </a>
               </div>
             </div>

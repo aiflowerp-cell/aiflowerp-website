@@ -63,11 +63,11 @@ export function AboutProductsOverview() {
             </div>
           </div>
 
-          {/* Card 2: Kinny Cart */}
+          {/* Card 2: KinnyCart */}
           <div className="about-product-card is-kinny">
             <div className="about-card-badge is-kinny">DIGITAL COMMERCE</div>
             <h3 className="about-card-title is-kinny">
-              <BrandText text="Kinny Cart" />
+              <BrandText text="KinnyCart" />
             </h3>
             <p className="about-card-role">Local Commerce & Online Storefronts</p>
             <p className="about-card-desc">
@@ -86,7 +86,7 @@ export function AboutProductsOverview() {
                 rel="noopener noreferrer"
                 className="button button-kinny"
               >
-                Open <BrandText text="Kinny Cart" /> ↗
+                Open <BrandText text="KinnyCart" /> ↗
               </a>
             </div>
           </div>

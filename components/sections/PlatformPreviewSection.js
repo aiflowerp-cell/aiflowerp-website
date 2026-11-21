@@ -1,15 +1,22 @@
 /*
  * FILE: components/sections/PlatformPreviewSection.js
  * PURPOSE:
- * Section 6: Product Screenshots / Platform Preview.
+ * Section 6: AI FLOW ERP — LIVE PRODUCT SHOWCASE
  *
  * RESPONSIBILITIES:
- * - Render interactive system selector between ai flow ERP (Desktop) and Kinny Cart (Mobile)
- * - Render tabbed navigation for individual authentic module screens with system-specific branding
- * - Display authentic screenshots inside modern frames with verified captions
- * - For ERP: Show main desktop view + 3 supporting desktop register thumbnails (Purchase, Transit, Lifting)
- * - For Kinny Cart: Show authentic 4-smartphone mockup showcase + 4-step consumer journey flow
- * - Provide direct live launch links for both applications
+ * - Render authentic enterprise showcase featuring photorealistic Platinum Silver Laptop
+ * - Strict information hierarchy:
+ *   1. Eyebrow: AI FLOW ERP — LIVE PRODUCT SHOWCASE
+ *   2. Main Heading: See Your Entire Business in One Connected Dashboard
+ *   3. Supporting Description: Explore how ai flow ERP manages purchases, sales...
+ *   4. Seven ERP Tabs: Dashboard | Purchase | Sales | Stock Summary | Transit Stock | Lifting | Reports & Analytics
+ *   5. Production / Screenshot Status: Production ERP Screenshots • Verified Light Mode
+ *   6. Platinum Silver Laptop: 100% uncropped, full silver keyboard & trackpad, correct screen aspect ratio
+ *   7. Selected Module Description: Module badge, verified badge, title, concise summary
+ *   8. Launch ERP CTA: Direct link to production ERP application
+ * - Maintain identical hardware presentation across all 7 ERP tabs
+ * - Balanced desktop visual rhythm at 1366x768 and 1440x900
+ * - Zero horizontal overflow on mobile
  *
  * DEPENDENCIES:
  * - react (useState)
@@ -24,269 +31,119 @@ import { useState } from "react";
 import Image from "next/image";
 import { content } from "@/content/siteContent";
 import { BrandText } from "@/components/ui/BrandText";
+import { MasterLaptop } from "@/components/ui/MasterLaptop";
 
 export function PlatformPreviewSection() {
   const { platformPreview } = content;
-  const [activeSystemId, setActiveSystemId] = useState("erp");
   const [activeScreenIdx, setActiveScreenIdx] = useState(0);
 
   if (!platformPreview || !platformPreview.systems) return null;
 
-  const currentSystem =
-    platformPreview.systems.find((s) => s.id === activeSystemId) ||
+  const erpSystem =
+    platformPreview.systems.find((s) => s.id === "erp") ||
     platformPreview.systems[0];
 
-  const screens = currentSystem.screens || [];
+  const screens = erpSystem.screens || [];
   const currentScreen = screens[activeScreenIdx] || screens[0];
-  const isKinny = currentSystem.id === "kinny-cart" || currentSystem.id === "shopping";
 
-  const handleSystemChange = (systemId) => {
-    setActiveSystemId(systemId);
-    setActiveScreenIdx(0);
-  };
+  const sectionEyebrow = platformPreview.eyebrow || "AI FLOW ERP — LIVE PRODUCT SHOWCASE";
+  const sectionTitle = platformPreview.title || "See Your Entire Business in One Connected Dashboard";
+  const sectionDescription = platformPreview.description || "Explore how ai flow ERP manages purchases, sales, inventory, transit stock, lifting and business analytics through one integrated platform.";
 
   return (
     <section className="section platform-preview-section" id="platform-preview">
       <div className="container">
-        <div className="section-heading align-center">
-          {platformPreview.eyebrow && (
-            <p className="eyebrow">{platformPreview.eyebrow}</p>
-          )}
-          <h2>{platformPreview.title}</h2>
-          {platformPreview.description && (
-            <p className="section-lead">
-              <BrandText text={platformPreview.description} />
-            </p>
-          )}
+        {/* 1. Eyebrow, 2. Main Heading, 3. Supporting Description */}
+        <div className="section-heading align-center platform-heading">
+          <p className="eyebrow">{sectionEyebrow}</p>
+          <h2>{sectionTitle}</h2>
+          <p className="section-lead">
+            <BrandText text={sectionDescription} />
+          </p>
         </div>
 
-        {/* System Selector Tabs */}
-        <div className="preview-system-tabs" role="tablist" aria-label="System Preview Selector">
-          {platformPreview.systems.map((sys) => {
-            const isSysKinny = sys.id === "kinny-cart" || sys.id === "shopping";
-            const isSelected = activeSystemId === sys.id;
-            return (
-              <button
-                key={sys.id}
-                type="button"
-                role="tab"
-                aria-selected={isSelected}
-                className={`preview-system-btn ${isSelected ? "is-active" : ""} ${isSysKinny ? "is-kinny" : ""}`}
-                onClick={() => handleSystemChange(sys.id)}
-              >
-                <span className="preview-system-btn-title">
-                  <BrandText text={sys.name} />
-                </span>
-                <span className="preview-system-btn-badge">{sys.badge}</span>
-              </button>
-            );
-          })}
-        </div>
-
-        {/* Screen Switcher Pills */}
-        <div className="preview-screens-nav" role="tablist" aria-label="Module Screen Tabs">
+        {/* 4. Seven ERP Tabs */}
+        <div className="preview-screens-nav" role="tablist" aria-label="Seven Core ERP Modules">
           {screens.map((screen, idx) => (
             <button
               key={idx}
               type="button"
               role="tab"
               aria-selected={activeScreenIdx === idx}
-              className={`preview-screen-pill ${activeScreenIdx === idx ? "is-active" : ""} ${isKinny ? "is-kinny" : ""}`}
+              className={`preview-screen-pill ${activeScreenIdx === idx ? "is-active" : ""}`}
               onClick={() => setActiveScreenIdx(idx)}
             >
               <span className="screen-pill-dot" />
-              <span><BrandText text={screen.title} /></span>
+              <span><BrandText text={screen.tabLabel || screen.title} /></span>
             </button>
           ))}
         </div>
 
-        {/* Primary Showcase Window Frame */}
-        <div className={`preview-browser-frame erp-preview-frame ${isKinny ? "is-kinny-frame" : ""}`}>
-          <div className="erp-frame-header">
-            <div className="erp-dots" aria-hidden="true">
-              <span className="erp-dot" />
-              <span className="erp-dot" />
-              <span className="erp-dot" />
+        {/* 5. Production Status, 6. Platinum Silver Laptop, 7. Selected Module Description, 8. Launch ERP CTA */}
+        <div className="preview-showcase-stage erp-showcase-stage">
+          {/* 5. Production / Screenshot Status */}
+          <div className="preview-stage-topbar">
+            <div className="preview-stage-meta">
+              <span className="preview-status-indicator">
+                <span className="preview-pulse-dot" aria-hidden="true" />
+                <span>Production ERP Screenshots • Verified Light Mode</span>
+              </span>
+              <span className="preview-stage-sep">•</span>
+              <span className="preview-stage-domain">erp.aiflowerp.in</span>
             </div>
-
-            <span className="erp-frame-title">
-              <BrandText text={currentSystem.name} />
-              <span> — </span>
-              <BrandText text={currentScreen?.title} />
-            </span>
-
             <a
-              href={currentSystem.url}
+              href={erpSystem.url}
               target="_blank"
               rel="noopener noreferrer"
-              className={`preview-frame-cta ${isKinny ? "is-kinny" : ""}`}
+              className="preview-stage-cta"
             >
-              <BrandText text={currentSystem.ctaLabel} />
+              <BrandText text={erpSystem.ctaLabel || "Open ai flow ERP ↗"} />
             </a>
           </div>
 
-          <div className="erp-frame-body">
-            {currentScreen?.image && (
-              <div className="preview-image-container">
-                <Image
-                  key={`${currentSystem.id}-${activeScreenIdx}`}
-                  src={currentScreen.image}
-                  alt={`${currentSystem.name} - ${currentScreen.title}`}
-                  width={1440}
-                  height={810}
-                  priority={activeScreenIdx === 0}
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                    borderRadius: "8px",
-                  }}
-                />
-              </div>
-            )}
+          {/* 6. Platinum Silver Laptop */}
+          <div className="preview-laptop-canvas">
+            <div className="preview-laptop-viewport">
+              <MasterLaptop
+                screenSrc={currentScreen.screenOverlay || currentScreen.image}
+                alt={`ai flow ERP - ${currentScreen.title} inside Platinum Silver Laptop`}
+                priority={activeScreenIdx === 0}
+              />
+            </div>
+          </div>
 
-            {currentScreen?.summary && (
-              <div className="preview-caption-bar">
-                <div className="preview-caption-info">
-                  <span className={`preview-badge-verified ${isKinny ? "is-kinny-badge" : ""}`}>
-                    ✓ Verified Authentic Dark Mode Screen
-                  </span>
-                  <p className="preview-caption-text">
-                    <BrandText text={currentScreen.summary} />
-                  </p>
-                </div>
-                <div className="preview-caption-links">
-                  <span className={`preview-system-tag ${isKinny ? "is-kinny-tag" : ""}`}>
-                    {currentSystem.badge}
-                  </span>
-                </div>
+          {/* 7. Selected Module Description & 8. Launch ERP CTA */}
+          <div className="preview-supporting-card">
+            <div className="preview-supporting-content">
+              <div className="preview-supporting-badge-row">
+                <span className="preview-module-tag">
+                  Module 0{activeScreenIdx + 1}
+                </span>
+                <span className="preview-verified-badge">
+                  ✓ Verified Desktop Enterprise • Light Mode
+                </span>
               </div>
-            )}
+              <h3 className="preview-module-title">
+                <BrandText text={currentScreen.title} />
+              </h3>
+              <p className="preview-module-summary">
+                <BrandText text={currentScreen.summary} />
+              </p>
+            </div>
+
+            <div className="preview-supporting-action">
+              <a
+                href={erpSystem.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="preview-module-btn"
+              >
+                <span>Launch in ERP</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
           </div>
         </div>
-
-        {/* ERP SUPPORTING DESKTOP REGISTERS (3 Screens below Main Dashboard) */}
-        {!isKinny && screens.length > 1 && (
-          <div className="erp-supporting-section">
-            <div className="erp-supporting-header">
-              <h3 className="erp-supporting-heading">Core Desktop Management Registers</h3>
-              <p className="erp-supporting-sub">
-                Explore real-time accounting registers for supplier billing, in-transit commodities, and factory dispatch lifting.
-              </p>
-            </div>
-            <div className="erp-supporting-grid">
-              {screens.slice(1).map((screen, idx) => {
-                const screenIdx = idx + 1;
-                const isCardActive = activeScreenIdx === screenIdx;
-                return (
-                  <div
-                    key={screenIdx}
-                    role="button"
-                    tabIndex={0}
-                    className={`erp-supporting-card ${isCardActive ? "is-active" : ""}`}
-                    onClick={() => setActiveScreenIdx(screenIdx)}
-                    onKeyDown={(e) => {
-                      if (e.key === "Enter" || e.key === " ") setActiveScreenIdx(screenIdx);
-                    }}
-                  >
-                    <div className="erp-supporting-thumb">
-                      <Image
-                        src={screen.image}
-                        alt={screen.title}
-                        width={480}
-                        height={270}
-                        style={{ width: "100%", height: "auto", display: "block" }}
-                      />
-                    </div>
-                    <div className="erp-supporting-info">
-                      <span className="erp-supporting-badge">Desktop Enterprise Module</span>
-                      <h4 className="erp-supporting-title"><BrandText text={screen.title} /></h4>
-                      <p className="erp-supporting-summary"><BrandText text={screen.summary} /></p>
-                    </div>
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        )}
-
-        {/* KINNY CART 4-STAGE CUSTOMER JOURNEY (Side-by-Side Highlights) */}
-        {isKinny && (
-          <div className="kinny-journey-section">
-            <div className="kinny-journey-header">
-              <span className="kinny-journey-kicker">END-TO-END MOBILE COMMERCE ARCHITECTURE</span>
-              <h3 className="kinny-journey-heading">Coordinated 4-Screen Consumer Flow</h3>
-              <p className="kinny-journey-sub">
-                Engineered for neighborhood speed: live merchant discovery, standardized FMCG cataloguing, intuitive smart cart management, and frictionless checkout.
-              </p>
-            </div>
-            <div className="kinny-journey-grid">
-              <div
-                role="button"
-                tabIndex={0}
-                className={`kinny-journey-card ${activeScreenIdx === 0 ? "is-active" : ""}`}
-                onClick={() => setActiveScreenIdx(0)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") setActiveScreenIdx(0);
-                }}
-              >
-                <span className="kinny-journey-step">Step 01</span>
-                <h4 className="kinny-journey-title">Live Storefront</h4>
-                <p className="kinny-journey-desc">
-                  Merchant identity (`JP Kirana & General Store`), quick search bar, category chips, and promotional deals.
-                </p>
-              </div>
-
-              <div
-                role="button"
-                tabIndex={0}
-                className={`kinny-journey-card ${activeScreenIdx === 2 ? "is-active" : ""}`}
-                onClick={() => setActiveScreenIdx(2)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") setActiveScreenIdx(2);
-                }}
-              >
-                <span className="kinny-journey-step">Step 02</span>
-                <h4 className="kinny-journey-title">FMCG Catalogue</h4>
-                <p className="kinny-journey-desc">
-                  Two-column product grid with Shan Masala, Fortune Oil, Dhara, Amul Ghee, real pack sizes, and red ADD buttons.
-                </p>
-              </div>
-
-              <div
-                role="button"
-                tabIndex={0}
-                className={`kinny-journey-card ${activeScreenIdx === 3 ? "is-active" : ""}`}
-                onClick={() => setActiveScreenIdx(3)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") setActiveScreenIdx(3);
-                }}
-              >
-                <span className="kinny-journey-step">Step 03</span>
-                <h4 className="kinny-journey-title">Smart Cart Summary</h4>
-                <p className="kinny-journey-desc">
-                  3 active items, increment/decrement stepper controls, and transparent bill breakdown (₹319 + ₹20 = ₹339).
-                </p>
-              </div>
-
-              <div
-                role="button"
-                tabIndex={0}
-                className={`kinny-journey-card ${activeScreenIdx === 3 ? "is-active" : ""}`}
-                onClick={() => setActiveScreenIdx(3)}
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" || e.key === " ") setActiveScreenIdx(3);
-                }}
-              >
-                <span className="kinny-journey-step">Step 04</span>
-                <h4 className="kinny-journey-title">One-Click Checkout</h4>
-                <p className="kinny-journey-desc">
-                  Cash on Delivery / UPI options, Siwan delivery address selection, and one-tap Place Order action.
-                </p>
-              </div>
-            </div>
-          </div>
-        )}
       </div>
     </section>
   );

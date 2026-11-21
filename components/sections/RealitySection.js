@@ -60,6 +60,7 @@ export function RealitySection() {
                 height={900} 
                 sizes="(max-width: 768px) 100vw, 50vw" 
                 priority={true} 
+                style={{ width: "100%", height: "auto", display: "block" }}
               /> 
             </div> 
           )} 

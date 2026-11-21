@@ -31,6 +31,7 @@ import { RealitySection } from "@/components/sections/RealitySection";
 import { WhyAiFlowSection } from "@/components/sections/WhyAiFlowSection";
 import { WhoWeServeSection } from "@/components/sections/WhoWeServeSection";
 import { PlatformPreviewSection } from "@/components/sections/PlatformPreviewSection";
+import { KinnyCartSection } from "@/components/sections/KinnyCartSection";
 import { CorporateAboutSection } from "@/components/sections/CorporateAboutSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 
@@ -52,10 +53,13 @@ export default function Home() {
       {/* 6. Who We Serve — Dealers, Distributors, Merchants and Customers */}
       <WhoWeServeSection />
 
-      {/* 7. Product Screenshots / Platform Preview */}
+      {/* 7. Product Screenshots / Platform Preview (ai flow ERP) */}
       <PlatformPreviewSection />
 
-      {/* 8. About ai flow — Parent Technology Brand Story */}
+      {/* 8. Dedicated KinnyCart Product Section */}
+      <KinnyCartSection />
+
+      {/* 9. About ai flow — Parent Technology Brand Story */}
       <CorporateAboutSection />
 
       {/* 9. Contact / Book a Demo */}

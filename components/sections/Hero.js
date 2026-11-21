@@ -30,6 +30,7 @@ import { useState } from "react";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { BrandText } from "@/components/ui/BrandText";
+import { MasterLaptop } from "@/components/ui/MasterLaptop";
 import { business } from "@/config/business";
 import { content } from "@/content/siteContent";
 
@@ -43,22 +44,22 @@ export function Hero() {
       id: "erp",
       label: "ai flow ERP",
       category: "Business Management System",
-      image: home.heroErpImage || "/images/erp/dashboard.png",
+      image: home.heroErpImage || "/images/erp/laptop-dashboard-collapsed.png",
       alt: "ai flow ERP Executive Dashboard",
       url: business.erpUrl || "https://erp.aiflowerp.in/",
-      tag: "Cement & Distribution ERP",
+      tag: "Desktop Enterprise SaaS",
       ctaText: "Open ai flow ERP ↗",
       isKinny: false,
     },
     {
       id: "kinny",
-      label: "Kinny Cart",
+      label: "KinnyCart",
       category: "Digital Commerce Platform",
-      image: home.heroShoppingImage || "/images/shopping/shopping-hero.png",
-      alt: "Kinny Cart Digital Commerce Platform",
+      image: home.heroShoppingImage || "/images/shopping/three-phones-showcase.png",
+      alt: "KinnyCart Mobile Shopping Application — 3 Smartphones",
       url: business.shoppingUrl || "https://shop.aiflowerp.in/",
-      tag: "Kinny Cart Online Store",
-      ctaText: "Open Kinny Cart ↗",
+      tag: "Mobile-First Local Commerce",
+      ctaText: "Open KinnyCart ↗",
       isKinny: true,
     },
   ];
@@ -87,10 +88,10 @@ export function Hero() {
             </p>
           )}
 
-          {home.hindiText && (
-            <div className="hero-hindi">
-              <span className="hero-hindi-accent" aria-hidden="true">“</span>
-              <p>{home.hindiText}</p>
+          {(home.tagline || home.hindiText) && (
+            <div className="hero-hindi hero-tagline-quote">
+              <span className="hero-hindi-accent hero-tagline-accent" aria-hidden="true">“</span>
+              <p>{home.tagline || home.hindiText}</p>
             </div>
           )}
 
@@ -124,10 +125,15 @@ export function Hero() {
         <div className="hero-right">
           <div className="hero-dual-frame erp-preview-frame">
             <div className="erp-frame-header hero-system-switcher-header">
-              <div className="erp-dots" aria-hidden="true">
-                <span className="erp-dot" />
-                <span className="erp-dot" />
-                <span className="erp-dot" />
+              <div className="hero-system-status-dots" aria-hidden="true">
+                <span
+                  className={`hero-status-dot is-erp ${activeSystem === "erp" ? "is-active" : ""}`}
+                  title="ai flow ERP status"
+                />
+                <span
+                  className={`hero-status-dot is-kinny ${activeSystem === "kinny" ? "is-active" : ""}`}
+                  title="KinnyCart status"
+                />
               </div>
 
               <div className="hero-system-toggle-group" role="tablist" aria-label="Product Showcase Selector">
@@ -150,35 +156,72 @@ export function Hero() {
                 href={currentSystem.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hero-frame-external-link"
+                className={`hero-frame-external-link ${currentSystem.isKinny ? "is-kinny-link" : ""}`}
                 title={`Open ${currentSystem.label} in new tab`}
               >
-                {currentSystem.id === "erp" ? "Open ai flow ERP ↗" : "Open Kinny Cart ↗"}
+                {currentSystem.id === "erp" ? (
+                  "Open ai flow ERP ↗"
+                ) : (
+                  <>
+                    <Image
+                      src="/images/brands/kinnycart/kinnycart-storefront-symbol.png"
+                      alt=""
+                      width={14}
+                      height={14}
+                      className="hero-kinny-topbar-icon"
+                      aria-hidden="true"
+                    />
+                    <span>Open KinnyCart ↗</span>
+                  </>
+                )}
               </a>
             </div>
 
             <div className="erp-frame-body hero-preview-body">
               <div className="hero-image-wrapper">
-                <Image
-                  key={currentSystem.id}
-                  src={currentSystem.image}
-                  alt={currentSystem.alt}
-                  width={1200}
-                  height={760}
-                  priority
-                  style={{
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                    borderRadius: "8px",
-                  }}
-                />
+                {currentSystem.id === "erp" ? (
+                  <MasterLaptop
+                    screenSrc="/images/erp/screens/screen-dashboard-collapsed.png"
+                    alt={currentSystem.alt}
+                    priority
+                  />
+                ) : (
+                  <Image
+                    key={currentSystem.id}
+                    src={currentSystem.image}
+                    alt={currentSystem.alt}
+                    width={1376}
+                    height={768}
+                    priority
+                    style={{
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                      borderRadius: "8px",
+                    }}
+                  />
+                )}
               </div>
 
               <div className="hero-frame-caption">
                 <div className="hero-caption-left">
-                  <span className="hero-caption-category">{currentSystem.category}</span>
-                  <span className="hero-caption-tag"><BrandText text={currentSystem.tag} /></span>
+                  {currentSystem.id === "kinny" ? (
+                    <div className="hero-kinny-caption-brand">
+                      <Image
+                        src="/images/brands/kinnycart/kinnycart-logo-horizontal.png"
+                        alt="KinnyCart"
+                        width={116}
+                        height={34}
+                        className="hero-kinny-caption-logo"
+                      />
+                      <span className="hero-caption-tag">Mobile-First Commerce</span>
+                    </div>
+                  ) : (
+                    <>
+                      <span className="hero-caption-category">{currentSystem.category}</span>
+                      <span className="hero-caption-tag"><BrandText text={currentSystem.tag} /></span>
+                    </>
+                  )}
                 </div>
                 <a
                   href={currentSystem.url}
@@ -186,7 +229,7 @@ export function Hero() {
                   rel="noopener noreferrer"
                   className={`hero-caption-cta ${currentSystem.isKinny ? "is-kinny" : ""}`}
                 >
-                  <BrandText text={currentSystem.ctaText} />
+                  {currentSystem.id === "kinny" ? "Open KinnyCart ↗" : <BrandText text={currentSystem.ctaText} />}
                 </a>
               </div>
             </div>

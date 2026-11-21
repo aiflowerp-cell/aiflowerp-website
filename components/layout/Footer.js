@@ -19,6 +19,7 @@
  */
 
 import Link from "next/link";
+import Image from "next/image";
 import { business, navigation } from "@/config/business";
 import { BrandText } from "@/components/ui/BrandText";
 
@@ -46,35 +47,53 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="footer-col">
+        <div className="footer-col footer-col-products">
           <p className="footer-label">Our Products</p>
-          <div className="footer-links">
-            {(business.erpUrl || business.appUrl) && (
+          <div className="footer-links footer-product-architecture">
+            {/* Product 01: ai flow ERP */}
+            <div className="footer-product-item">
               <a
-                href={business.erpUrl || business.appUrl}
+                href={business.erpUrl || business.appUrl || "https://erp.aiflowerp.in/"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-product-link is-erp"
               >
+                <span className="footer-product-badge-dot is-erp" aria-hidden="true" />
                 <BrandText text="ai flow ERP" /> ↗
               </a>
-            )}
-            {business.shoppingUrl && (
+              <span className="footer-product-sub">Enterprise Business Management System</span>
+            </div>
+
+            {/* Product 02: KinnyCart */}
+            <div className="footer-product-item">
               <a
-                href={business.shoppingUrl}
+                href={business.shoppingUrl || "https://shop.aiflowerp.in/"}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="footer-product-link is-kinny"
               >
-                <BrandText text="kinny cart" /> ↗
+                <Image
+                  src="/images/brands/kinnycart/kinnycart-storefront-symbol.png"
+                  alt=""
+                  width={14}
+                  height={14}
+                  className="footer-kinny-icon"
+                  aria-hidden="true"
+                />
+                <span>KinnyCart ↗</span>
               </a>
-            )}
-            <Link href="/products" style={{ color: "var(--muted-dark)" }}>
-              Platform Architecture
-            </Link>
-            <Link href="/contact" style={{ fontWeight: "600", color: "var(--ink)" }}>
-              Book a Demo
-            </Link>
+              <span className="footer-product-sub">Digital Commerce Platform</span>
+            </div>
+
+            <div className="footer-product-meta-links">
+              <Link href="/products" className="footer-sub-link">
+                Platform Architecture
+              </Link>
+              <span className="footer-meta-sep">•</span>
+              <Link href="/contact" className="footer-sub-link is-demo">
+                Book a Demo
+              </Link>
+            </div>
           </div>
         </div>
 
