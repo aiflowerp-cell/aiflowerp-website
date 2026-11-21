@@ -143,7 +143,7 @@ export function Hero() {
                     type="button"
                     role="tab"
                     aria-selected={activeSystem === sys.id}
-                    className={`hero-system-tab ${activeSystem === sys.id ? "is-active" : ""}`}
+                    className={`hero-system-tab ${activeSystem === sys.id ? "is-active" : ""} ${sys.id === "kinny" ? "is-kinny-tab" : "is-erp-tab"}`}
                     onClick={() => setActiveSystem(sys.id)}
                   >
                     <span className="hero-tab-bullet" />
@@ -159,21 +159,9 @@ export function Hero() {
                 className={`hero-frame-external-link ${currentSystem.isKinny ? "is-kinny-link" : ""}`}
                 title={`Open ${currentSystem.label} in new tab`}
               >
-                {currentSystem.id === "erp" ? (
-                  "Open ai flow ERP ↗"
-                ) : (
-                  <>
-                    <Image
-                      src="/images/brands/kinnycart/kinnycart-storefront-symbol.png"
-                      alt=""
-                      width={14}
-                      height={14}
-                      className="hero-kinny-topbar-icon"
-                      aria-hidden="true"
-                    />
-                    <span>Open KinnyCart ↗</span>
-                  </>
-                )}
+                {currentSystem.id === "erp"
+                  ? "Open ai flow ERP ↗"
+                  : "Open KinnyCart ↗"}
               </a>
             </div>
 
@@ -229,7 +217,11 @@ export function Hero() {
                   rel="noopener noreferrer"
                   className={`hero-caption-cta ${currentSystem.isKinny ? "is-kinny" : ""}`}
                 >
-                  {currentSystem.id === "kinny" ? "Open KinnyCart ↗" : <BrandText text={currentSystem.ctaText} />}
+                  {currentSystem.id === "kinny" ? (
+                    "Open KinnyCart ↗"
+                  ) : (
+                    <BrandText text={currentSystem.ctaText} />
+                  )}
                 </a>
               </div>
             </div>

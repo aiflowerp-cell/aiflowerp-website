@@ -14,7 +14,7 @@
  *   5. Five most important features
  *   6. Clear product CTA
  * - Provide direct live links: https://erp.aiflowerp.in/ & https://shop.aiflowerp.in/
- * - Equal visual prominence with coordinated brand colors (#2563EB Blue & #059669 Green)
+ * - Equal visual prominence with coordinated brand colors (#2563EB Blue & #C80008 Red with Gold accents)
  *
  * DEPENDENCIES:
  * - next/image

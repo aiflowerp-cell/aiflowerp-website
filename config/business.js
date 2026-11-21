@@ -46,8 +46,8 @@ export const business = {
   shoppingUrl: process.env.NEXT_PUBLIC_SHOPPING_URL || "https://shop.aiflowerp.in/",
   appUrl: process.env.NEXT_PUBLIC_ERP_URL || "https://erp.aiflowerp.in/",
   headerCta: {
-    label: "Book a Demo",
-    href: "/contact",
+    label: "Open KinnyCart ↗",
+    href: process.env.NEXT_PUBLIC_SHOPPING_URL || "https://shop.aiflowerp.in/",
   },
   socialLinks: {},
   map: {
