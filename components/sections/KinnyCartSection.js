@@ -55,7 +55,7 @@ export function KinnyCartSection() {
           <div className="kinnycart-brand-badge-row">
             <Image
               src={kinnyCartSection.logo || "/images/brands/kinnycart/kinnycart-logo-horizontal.png"}
-              alt="kinny cart"
+              alt="KinniCart"
               width={240}
               height={70}
               className="kinnycart-section-logo"
@@ -141,7 +141,7 @@ export function KinnyCartSection() {
                 rel="noopener noreferrer"
                 className="kinnycart-topbar-link"
               >
-                Open <BrandText text="kinny cart" /> ↗
+                Open <BrandText text="KinniCart" /> ↗
               </a>
             </div>
 
@@ -149,7 +149,7 @@ export function KinnyCartSection() {
             <div className="kinnycart-phones-viewport">
               <Image
                 src={kinnyCartSection.showcaseImage || "/images/shopping/three-phones-showcase.png"}
-                alt="kinny cart Mobile Commerce Showcase — Store Discovery, FMCG Product Catalogue, and Mera Samaan Cart"
+                alt="KinniCart Mobile Commerce Showcase — Store Discovery, FMCG Product Catalogue, and Mera Samaan Cart"
                 width={1200}
                 height={760}
                 priority
@@ -163,7 +163,7 @@ export function KinnyCartSection() {
                 <span className="kinnycart-connected-tag">CONNECTED 5-STAGE ARCHITECTURE</span>
                 <h3 className="kinnycart-connected-title">Complete Mobile Commerce Journey</h3>
                 <p className="kinnycart-connected-desc">
-                  Explore how <BrandText text="kinny cart" /> seamlessly guides consumers from first arrival to local store fulfillment.
+                  Explore how <BrandText text="KinniCart" /> seamlessly guides consumers from first arrival to local store fulfillment.
                 </p>
               </div>
 
@@ -234,7 +234,7 @@ export function KinnyCartSection() {
                 <div className="kinnycart-single-phone-frame">
                   <Image
                     src={currentStage.screen}
-                    alt={`kinny cart Stage ${currentStage.number} — ${currentStage.title}`}
+                    alt={`KinniCart Stage ${currentStage.number} — ${currentStage.title}`}
                     width={380}
                     height={790}
                     priority
@@ -344,7 +344,7 @@ export function KinnyCartSection() {
             rel="noopener noreferrer"
             className="button button-kinny-primary"
           >
-            <span>Open <BrandText text="kinny cart" /> ↗</span>
+            <span>Open <BrandText text="KinniCart" /> ↗</span>
           </a>
           <button
             type="button"

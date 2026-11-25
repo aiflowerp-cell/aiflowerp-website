@@ -86,7 +86,7 @@ export function Header() {
             rel="noopener noreferrer"
             onClick={() => setOpen(false)}
           >
-            Open <BrandText text="kinny cart" /> ↗
+            Open <BrandText text="KinniCart" /> ↗
           </a>
         </nav>
       </div>

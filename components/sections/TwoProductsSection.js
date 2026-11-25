@@ -132,7 +132,7 @@ export function TwoProductsSection() {
                 <h3 className="product-card-title is-kinny">
                   <Image
                     src="/images/brands/kinnycart/kinnycart-logo-horizontal.png"
-                    alt="kinny cart"
+                    alt="KinniCart"
                     width={136}
                     height={40}
                     className="product-card-brand-logo"
@@ -166,7 +166,7 @@ export function TwoProductsSection() {
                   <div className="product-phone-mockup-frame">
                     <Image
                       src="/images/shopping/phone-1-storefront.png"
-                      alt="kinny cart Mobile 1 — Store Discovery Home"
+                      alt="KinniCart Mobile 1 — Store Discovery Home"
                       width={380}
                       height={790}
                       style={{
@@ -188,7 +188,7 @@ export function TwoProductsSection() {
                   <div className="product-phone-mockup-frame">
                     <Image
                       src="/images/shopping/phone-2-catalogue.png"
-                      alt="kinny cart Mobile 2 — FMCG Product Catalogue"
+                      alt="KinniCart Mobile 2 — FMCG Product Catalogue"
                       width={380}
                       height={790}
                       style={{
@@ -210,7 +210,7 @@ export function TwoProductsSection() {
                   <div className="product-phone-mockup-frame">
                     <Image
                       src="/images/shopping/phone-3-cart.png"
-                      alt="kinny cart Mobile 3 — Smart Cart & Checkout"
+                      alt="KinniCart Mobile 3 — Smart Cart & Checkout"
                       width={380}
                       height={790}
                       style={{
@@ -251,7 +251,7 @@ export function TwoProductsSection() {
                   rel="noopener noreferrer"
                   className="button button-kinny product-cta-btn"
                 >
-                  <span>Open <BrandText text="kinny cart" /> ↗</span>
+                  <span>Open <BrandText text="KinniCart" /> ↗</span>
                 </a>
               </div>
             </div>

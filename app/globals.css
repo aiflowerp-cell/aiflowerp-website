@@ -433,7 +433,7 @@ img {
 .wordmark-kinny {
   color: var(--brand-commerce-red, #dc2626);
   font-weight: 750;
-  text-transform: lowercase;
+  text-transform: none;
   letter-spacing: -0.015em;
   display: inline;
 }

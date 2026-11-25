@@ -30,7 +30,7 @@ import { content } from "@/content/siteContent";
 export const metadata = {
   title: "Contact & Book a Demo — ai flow",
   description:
-    "Schedule a demonstration of ai flow ERP for enterprise operations or connect with our commerce team for kinny cart merchant onboarding.",
+    "Schedule a demonstration of ai flow ERP for enterprise operations or connect with our commerce team for KinniCart merchant onboarding.",
 };
 
 export default function ContactPage() {

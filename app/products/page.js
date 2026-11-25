@@ -29,9 +29,9 @@ import { business } from "@/config/business";
 import { content } from "@/content/siteContent";
 
 export const metadata = {
-  title: "Platform Architecture — ai flow ERP & kinny cart",
+  title: "Platform Architecture — ai flow ERP & KinniCart",
   description:
-    "Explore the enterprise architecture powering ai flow ERP and kinny cart across multi-tenant isolation, OCR ingestion, accounting integrity, and digital commerce.",
+    "Explore the enterprise architecture powering ai flow ERP and KinniCart across multi-tenant isolation, OCR ingestion, accounting integrity, and digital commerce.",
 };
 
 export default function PlatformPage() {
@@ -113,9 +113,11 @@ export default function PlatformPage() {
             <div className="platform-pillars-grid">
               {pillars.map((pillar, index) => {
                 const isKinnyPillar =
+                  pillar.category === "KinniCart" ||
                   pillar.category === "KinnyCart" ||
                   pillar.category === "kinny cart" ||
-                  pillar.category === "Kinny Cart";
+                  pillar.category === "Kinny Cart" ||
+                  pillar.category?.toLowerCase()?.includes("kinn");
                 const isErpPillar = pillar.category === "ai flow ERP";
                 return (
                   <Card className="pillar-card" key={pillar.title || index}>

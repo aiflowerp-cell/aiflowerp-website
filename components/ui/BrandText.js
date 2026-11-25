@@ -3,11 +3,11 @@
  * PURPOSE:
  * Centralized rendering primitive for official brand wordmarks:
  * - 'ai flow' (strictly lowercase, bold, #2563EB enterprise blue)
- * - 'kinny cart' (strictly lowercase with space, bold, #059669 commerce green)
+ * - 'KinniCart' (strictly KinniCart, bold, #DC2626 primary red)
  *
  * RESPONSIBILITIES:
  * - Render 'ai flow' consistently in lowercase with blue brand wordmark styling
- * - Render 'kinny cart' consistently in lowercase with space and commerce green wordmark styling
+ * - Render 'KinniCart' consistently with exact approved brand spelling in red wordmark styling
  * - Maintain identical font weight and visual balance between both coordinated brand identities
  *
  * DEPENDENCIES:
@@ -17,9 +17,9 @@
 export function BrandText({ text }) {
   if (typeof text !== "string") return text;
 
-  // Pattern matches all casings and variations of ai flow and KinnyCart / Kinny Cart
+  // Pattern matches all casings and variations of ai flow and KinniCart / KinnyCart / Kinny Cart
   const parts = text.split(
-    /(ai\s*flow|AI\s*FLOW|Ai\s*Flow|aiflow|Kinny\s*Cart|KINNY\s*CART|kinny\s*cart|KinnyCart|KINNYCART|kinnycart|KinniyaCart|KINNIYACART|Kinniya\s*Cart|KinniyCart)/gi
+    /(ai\s*flow|AI\s*FLOW|Ai\s*Flow|aiflow|Kinni\s*Cart|KINNI\s*CART|kinni\s*cart|KinniCart|KINNICART|kinnicart|Kinny\s*Cart|KINNY\s*CART|kinny\s*cart|KinnyCart|KINNYCART|kinnycart|KinniyaCart|KINNIYACART|Kinniya\s*Cart|KinniyCart)/gi
   );
 
   return parts.map((part, index) => {
@@ -36,13 +36,14 @@ export function BrandText({ text }) {
     }
 
     if (
+      compact === "kinnicart" ||
       compact === "kinnycart" ||
       compact === "kinniyacart" ||
       compact === "kinniycart"
     ) {
       return (
         <span key={index} className="wordmark-kinny">
-          kinny cart
+          KinniCart
         </span>
       );
     }
@@ -59,10 +60,13 @@ export function AiFlowWordmark({ suffix = "" }) {
   );
 }
 
-export function KinnyCartWordmark({ suffix = "" }) {
+export function KinniCartWordmark({ suffix = "" }) {
   return (
     <span className="wordmark-kinny">
-      kinny cart{suffix ? ` ${suffix}` : ""}
+      KinniCart{suffix ? ` ${suffix}` : ""}
     </span>
   );
 }
+
+// Backward compatibility alias for any existing imports
+export const KinnyCartWordmark = KinniCartWordmark;

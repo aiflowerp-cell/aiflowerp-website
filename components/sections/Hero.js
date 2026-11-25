@@ -53,13 +53,13 @@ export function Hero() {
     },
     {
       id: "kinny",
-      label: "kinny cart",
+      label: "KinniCart",
       category: "Digital Commerce Platform",
       image: home.heroShoppingImage || "/images/shopping/four-phones-showcase.png",
-      alt: "kinny cart Mobile Commerce Showcase — Welcome, Store Discovery, Catalogue, and Cart",
+      alt: "KinniCart Mobile Commerce Showcase — Welcome, Store Discovery, Catalogue, and Cart",
       url: business.shoppingUrl || "https://shop.aiflowerp.in/",
       tag: "Mobile-First Local Commerce",
-      ctaText: "Open kinny cart ↗",
+      ctaText: "Open KinniCart ↗",
       isKinny: true,
     },
   ];
@@ -132,7 +132,7 @@ export function Hero() {
                 />
                 <span
                   className={`hero-status-dot is-kinny ${activeSystem === "kinny" ? "is-active" : ""}`}
-                  title="kinny cart status"
+                  title="KinniCart status"
                 />
               </div>
 
@@ -161,7 +161,7 @@ export function Hero() {
               >
                 {currentSystem.id === "erp"
                   ? "Open ai flow ERP ↗"
-                  : "Open kinny cart ↗"}
+                  : "Open KinniCart ↗"}
               </a>
             </div>
 
@@ -211,7 +211,7 @@ export function Hero() {
                   className={`hero-caption-cta ${currentSystem.isKinny ? "is-kinny" : ""}`}
                 >
                   {currentSystem.id === "kinny" ? (
-                    "Open kinny cart ↗"
+                    "Open KinniCart ↗"
                   ) : (
                     <BrandText text={currentSystem.ctaText} />
                   )}

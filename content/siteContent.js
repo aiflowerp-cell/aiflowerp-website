@@ -58,7 +58,7 @@ export const content = {
     },
     shopping: {
       category: "DIGITAL COMMERCE PLATFORM",
-      name: "kinny cart",
+      name: "KinniCart",
       heading: "Take Your Store Online",
       description: "A digital shopping ecosystem connecting local merchants and customers through online storefronts, product catalogues and convenient shopping experiences.",
       highlights: [
@@ -68,7 +68,7 @@ export const content = {
         "Merchant Onboarding & Order Management",
         "Local Store Discovery & Offers",
       ],
-      ctaText: "Open kinny cart ↗",
+      ctaText: "Open KinniCart ↗",
       destination: "https://shop.aiflowerp.in/",
       image: "/images/shopping/three-phones-showcase.png",
       secondaryImage: "/images/shopping/phone-1-storefront.png",
@@ -126,7 +126,7 @@ export const content = {
         tag: "LOCAL COMMERCE",
         title: "Merchants & Retailers",
         description: "Neighborhood grocery, kirana, and retail merchants seeking to establish a digital presence, accept orders, and grow local market share.",
-        system: "kinny cart",
+        system: "KinniCart",
         href: "https://shop.aiflowerp.in/",
         external: true,
         points: [
@@ -140,7 +140,7 @@ export const content = {
         tag: "DIGITAL CONSUMERS",
         title: "Everyday Customers & Families",
         description: "Shoppers who want the convenience of ordering groceries, household goods, and daily essentials from their trusted neighborhood stores.",
-        system: "kinny cart",
+        system: "KinniCart",
         href: "https://shop.aiflowerp.in/",
         external: true,
         points: [
@@ -237,10 +237,10 @@ export const content = {
       },
       {
         id: "kinny-cart",
-        name: "kinny cart",
+        name: "KinniCart",
         badge: "Digital Commerce Platform",
         url: "https://shop.aiflowerp.in/",
-        ctaLabel: "Open kinny cart ↗",
+        ctaLabel: "Open KinniCart ↗",
         screens: [
           {
             title: "Welcome & Onboarding",
@@ -399,7 +399,7 @@ export const content = {
       },
     ],
     primaryCta: {
-      label: "Open kinny cart ↗",
+      label: "Open KinniCart ↗",
       href: "https://shop.aiflowerp.in/",
       external: true,
     },
@@ -414,8 +414,8 @@ export const content = {
     description: "ai flow is the technology parent company behind two specialized, modern business platforms.",
     paragraphs: [
       "ai flow was founded with a singular conviction: business software must reflect the actual, physical operational realities of commerce, not impose generic templates on diverse industries.",
-      "Today, ai flow powers two independent live production systems: ai flow ERP, an accounting-first business management platform purpose-built for cement dealers and bulk distributors; and kinny cart, an end-to-end digital commerce ecosystem connecting local merchants and neighborhood shoppers.",
-      "Whether managing hundreds of metric tonnes of transit stock across railway rakes and godowns, or organizing thousands of FMCG catalog SKUs for quick local ordering on kinny cart, our systems deliver verifiable data integrity, operator-focused verification gates, and robust cloud performance.",
+      "Today, ai flow powers two independent live production systems: ai flow ERP, an accounting-first business management platform purpose-built for cement dealers and bulk distributors; and KinniCart, an end-to-end digital commerce ecosystem connecting local merchants and neighborhood shoppers.",
+      "Whether managing hundreds of metric tonnes of transit stock across railway rakes and godowns, or organizing thousands of FMCG catalog SKUs for quick local ordering on KinniCart, our systems deliver verifiable data integrity, operator-focused verification gates, and robust cloud performance.",
       "We build technology that enables businesses to operate with absolute clarity, maintain compliance, and unlock scalable digital growth.",
     ],
   },
@@ -641,7 +641,7 @@ export const content = {
   platformPage: {
     eyebrow: "Platform Architecture",
     title: "Engineered for Data Integrity, Verification, and Scale",
-    description: "The enterprise technology architecture powering both ai flow ERP and kinny cart across business operations and digital commerce.",
+    description: "The enterprise technology architecture powering both ai flow ERP and KinniCart across business operations and digital commerce.",
     systemsEyebrow: "ai flow Ecosystem",
     systemsTitle: "Two Specialized Systems. One Shared Technology Foundation.",
     systemsDescription: "Dedicated platforms engineered to support trade from bulk commodity distribution to neighborhood consumer checkout.",
@@ -658,10 +658,10 @@ export const content = {
       {
         id: "kinny-cart",
         badge: "COMMERCE PLATFORM",
-        title: "kinny cart",
+        title: "KinniCart",
         tagline: "Digital Commerce Platform • Local Storefronts & Orders",
         description: "End-to-end digital commerce platform connecting neighborhood merchants and customers with online storefronts, pre-mapped catalogues, instant ordering, and local delivery.",
-        ctaLabel: "Open kinny cart ↗",
+        ctaLabel: "Open KinniCart ↗",
         urlKey: "shoppingUrl",
       },
     ],
@@ -687,7 +687,7 @@ export const content = {
       {
         title: "Product Catalogue Infrastructure",
         description: "Standardized global master catalogue with pre-mapped GTIN barcodes, category taxonomies, and instant item discovery for digital storefronts.",
-        category: "kinny cart",
+        category: "KinniCart",
       },
       {
         title: "Inventory and Stock Management",
@@ -697,7 +697,7 @@ export const content = {
       {
         title: "Merchant and Customer Experience",
         description: "Turnkey digital storefront onboarding for neighborhood retailers paired with fast, intuitive mobile shopping, localized carts, and store pickup options.",
-        category: "kinny cart",
+        category: "KinniCart",
       },
       {
         title: "Security and Access Control",
@@ -736,10 +736,10 @@ export const content = {
     badge: null,
     paragraphs: [
       "ai flow was founded with a singular conviction: modern business software must reflect the actual, physical operational realities of commerce, not impose generic templates on diverse industries.",
-      "Today, ai flow powers two independent, live production systems: ai flow ERP, an accounting-first business management platform engineered for enterprise operations and commodity distribution; and kinny cart, an end-to-end digital commerce ecosystem connecting local merchants and neighborhood shoppers.",
+      "Today, ai flow powers two independent, live production systems: ai flow ERP, an accounting-first business management platform engineered for enterprise operations and commodity distribution; and KinniCart, an end-to-end digital commerce ecosystem connecting local merchants and neighborhood shoppers.",
       "Enterprise management and consumer commerce have fundamentally distinct operational rhythms. Rather than forcing diverse workflows into an unwieldy monolith, ai flow provides two dedicated platforms sharing a common foundation of data integrity, structured verification gates, and reliable cloud performance.",
       "ai flow ERP serves complex business operations—originating from the rigorous demands of cement distribution and heavy trade. It manages railway rake dispatches, tracks transit stock separately from physical godown inventory, automates invoice ingestion via OCR with operator verification, and maintains audit-grade double-entry accounting.",
-      "kinny cart empowers local digital commerce by giving neighborhood grocery, retail, and kirana merchants turnkey online storefronts, pre-mapped product catalogues, and seamless order management—enabling local businesses to compete and grow in the modern digital economy.",
+      "KinniCart empowers local digital commerce by giving neighborhood grocery, retail, and kirana merchants turnkey online storefronts, pre-mapped product catalogues, and seamless order management—enabling local businesses to compete and grow in the modern digital economy.",
       "Our technology vision is to build software that bridges physical trade realities and digital convenience. By combining structured business data, operator verification checkpoints, and scalable cloud infrastructure, ai flow enables businesses to operate with absolute clarity, maintain compliance, and unlock sustainable growth.",
     ],
   },
@@ -747,7 +747,7 @@ export const content = {
     eyebrow: "BOOK A DEMO & GET STARTED",
     title: "Experience the Power of ai flow",
     description:
-      "Schedule a live walkthrough of ai flow ERP for your enterprise, or learn how to take your store online with kinny cart.",
+      "Schedule a live walkthrough of ai flow ERP for your enterprise, or learn how to take your store online with KinniCart.",
     ctaText: "Book a Demo / Send Enquiry",
   },
   mapSection: {
@@ -760,7 +760,7 @@ export const content = {
     eyebrow: "BOOK A DEMO",
     title: "Experience ai flow in Action",
     description:
-      "Schedule a demonstration of ai flow ERP for enterprise operations or explore kinny cart for digital retail commerce.",
+      "Schedule a demonstration of ai flow ERP for enterprise operations or explore KinniCart for digital retail commerce.",
     details: {
       eyebrow: "Direct Inquiries",
       title: "Contact Information",

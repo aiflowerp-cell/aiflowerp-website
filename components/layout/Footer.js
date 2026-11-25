@@ -64,7 +64,7 @@ export function Footer() {
         <div className="footer-col footer-col-products">
           <p className="footer-label">OUR PRODUCTS</p>
           <div className="footer-product-architecture">
-            {/* Product 01: KinnyCart (Red #DC2626, Capital K and C, No Space) */}
+            {/* Product 01: KinniCart (Red #DC2626, Capital K and C, No Space) */}
             <div className="footer-product-item">
               <a
                 href={business.shoppingUrl || "https://shop.aiflowerp.in"}
@@ -73,7 +73,7 @@ export function Footer() {
                 className="footer-product-link is-kinnycart"
               >
                 <span className="footer-dot is-red" aria-hidden="true" />
-                <span className="footer-product-title-kinny">KinnyCart</span>
+                <span className="footer-product-title-kinny">KinniCart</span>
                 <span className="footer-external-arrow" aria-hidden="true">↗</span>
               </a>
               <span className="footer-product-sub">Digital Commerce Platform</span>
