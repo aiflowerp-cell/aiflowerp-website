@@ -42,13 +42,13 @@ export function ContactEnquirySection() {
     },
     {
       id: "kinny",
-      label: "KinnyCart Business Enquiry",
+      label: "kinny cart Business Enquiry",
       tagline: "Digital Commerce & Merchant Onboarding",
       description:
-        "Learn how neighborhood grocery stores, supermarkets, and local merchants launch online storefronts with KinnyCart.",
-      subject: "KinnyCart Merchant / Business Enquiry",
-      body: "Hello KinnyCart Team,%0D%0A%0D%0AI would like to learn more about launching an online store on KinnyCart.%0D%0A%0D%0AStore / Merchant Name:%0D%0ACity / Market Area:%0D%0ACategory (Grocery / FMCG / Retail):%0D%0AContact Number:%0D%0A%0D%0AThank you.",
-      buttonLabel: "Submit KinnyCart Enquiry ↗",
+        "Learn how neighborhood grocery stores, supermarkets, and local merchants launch online storefronts with kinny cart.",
+      subject: "kinny cart Merchant / Business Enquiry",
+      body: "Hello kinny cart Team,%0D%0A%0D%0AI would like to learn more about launching an online store on kinny cart.%0D%0A%0D%0AStore / Merchant Name:%0D%0ACity / Market Area:%0D%0ACategory (Grocery / FMCG / Retail):%0D%0AContact Number:%0D%0A%0D%0AThank you.",
+      buttonLabel: "Submit kinny cart Enquiry ↗",
       variant: "kinny",
     },
     {

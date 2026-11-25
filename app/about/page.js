@@ -26,7 +26,7 @@ import { content } from "@/content/siteContent";
 export const metadata = {
   title: "About ai flow — Engineering Intelligent Systems for Modern Trade",
   description:
-    "Learn about ai flow, the corporate technology brand behind two specialized platforms: ai flow ERP for business operations and KinnyCart for digital local commerce.",
+    "Learn about ai flow, the corporate technology brand behind two specialized platforms: ai flow ERP for business operations and kinny cart for digital local commerce.",
 };
 
 export default function AboutPage() {

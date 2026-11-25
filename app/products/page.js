@@ -29,9 +29,9 @@ import { business } from "@/config/business";
 import { content } from "@/content/siteContent";
 
 export const metadata = {
-  title: "Platform Architecture — ai flow ERP & KinnyCart",
+  title: "Platform Architecture — ai flow ERP & kinny cart",
   description:
-    "Explore the enterprise architecture powering ai flow ERP and KinnyCart across multi-tenant isolation, OCR ingestion, accounting integrity, and digital commerce.",
+    "Explore the enterprise architecture powering ai flow ERP and kinny cart across multi-tenant isolation, OCR ingestion, accounting integrity, and digital commerce.",
 };
 
 export default function PlatformPage() {

@@ -132,7 +132,7 @@ export function TwoProductsSection() {
                 <h3 className="product-card-title is-kinny">
                   <Image
                     src="/images/brands/kinnycart/kinnycart-logo-horizontal.png"
-                    alt="KinnyCart"
+                    alt="kinny cart"
                     width={136}
                     height={40}
                     className="product-card-brand-logo"
@@ -161,14 +161,14 @@ export function TwoProductsSection() {
               </div>
 
               <div className="product-three-phones-grid">
-                {/* Mobile 1 — Storefront */}
+                {/* Mobile 1 — Store Discovery */}
                 <div className="product-phone-item">
                   <div className="product-phone-mockup-frame">
                     <Image
                       src="/images/shopping/phone-1-storefront.png"
-                      alt="KinnyCart Mobile 1 — Merchant Storefront"
-                      width={360}
-                      height={720}
+                      alt="kinny cart Mobile 1 — Store Discovery Home"
+                      width={380}
+                      height={790}
                       style={{
                         width: "100%",
                         height: "auto",
@@ -178,8 +178,8 @@ export function TwoProductsSection() {
                   </div>
                   <div className="product-phone-label">
                     <span className="product-phone-tag">Mobile 1</span>
-                    <span className="product-phone-title">Storefront</span>
-                    <span className="product-phone-sub">JP Kirana · Search</span>
+                    <span className="product-phone-title">Store Discovery</span>
+                    <span className="product-phone-sub">Nearby Stores · Search</span>
                   </div>
                 </div>
 
@@ -188,9 +188,9 @@ export function TwoProductsSection() {
                   <div className="product-phone-mockup-frame">
                     <Image
                       src="/images/shopping/phone-2-catalogue.png"
-                      alt="KinnyCart Mobile 2 — FMCG Product Catalogue"
-                      width={360}
-                      height={720}
+                      alt="kinny cart Mobile 2 — FMCG Product Catalogue"
+                      width={380}
+                      height={790}
                       style={{
                         width: "100%",
                         height: "auto",
@@ -210,9 +210,9 @@ export function TwoProductsSection() {
                   <div className="product-phone-mockup-frame">
                     <Image
                       src="/images/shopping/phone-3-cart.png"
-                      alt="KinnyCart Mobile 3 — Smart Cart & Checkout"
-                      width={360}
-                      height={720}
+                      alt="kinny cart Mobile 3 — Smart Cart & Checkout"
+                      width={380}
+                      height={790}
                       style={{
                         width: "100%",
                         height: "auto",
@@ -223,7 +223,7 @@ export function TwoProductsSection() {
                   <div className="product-phone-label">
                     <span className="product-phone-tag">Mobile 3</span>
                     <span className="product-phone-title">Cart / Checkout</span>
-                    <span className="product-phone-sub">Steppers · Bill ₹870</span>
+                    <span className="product-phone-sub">Steppers · Bill ₹880</span>
                   </div>
                 </div>
               </div>
@@ -251,16 +251,7 @@ export function TwoProductsSection() {
                   rel="noopener noreferrer"
                   className="button button-kinny product-cta-btn"
                 >
-                  <Image
-                    src="/images/brands/kinnycart/kinnycart-storefront-symbol.png"
-                    alt=""
-                    width={16}
-                    height={16}
-                    className="button-kinny-icon"
-                    aria-hidden="true"
-                    style={{ marginRight: "6px" }}
-                  />
-                  <span>Open KinnyCart ↗</span>
+                  <span>Open <BrandText text="kinny cart" /> ↗</span>
                 </a>
               </div>
             </div>

@@ -64,7 +64,7 @@ export function Footer() {
               <span className="footer-product-sub">Enterprise Business Management System</span>
             </div>
 
-            {/* Product 02: KinnyCart */}
+            {/* Product 02: kinny cart */}
             <div className="footer-product-item">
               <a
                 href={business.shoppingUrl || "https://shop.aiflowerp.in/"}
@@ -72,15 +72,7 @@ export function Footer() {
                 rel="noopener noreferrer"
                 className="footer-product-link is-kinny"
               >
-                <Image
-                  src="/images/brands/kinnycart/kinnycart-storefront-symbol.png"
-                  alt=""
-                  width={14}
-                  height={14}
-                  className="footer-kinny-icon"
-                  aria-hidden="true"
-                />
-                <span>KinnyCart ↗</span>
+                <span>kinny cart ↗</span>
               </a>
               <span className="footer-product-sub">Digital Commerce Platform</span>
             </div>

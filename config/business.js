@@ -27,7 +27,7 @@ export const business = {
   name: "ai flow",
   shortName: "ai flow",
   tagline: "Complete Business & Commerce Solutions",
-  description: "ai flow is a technology platform offering two distinct business solutions: ai flow ERP for complete enterprise operations and cement distribution, and KinnyCart for digital commerce.",
+  description: "ai flow is a technology platform offering two distinct business solutions: ai flow ERP for complete enterprise operations and cement distribution, and kinny cart for digital commerce.",
   owner: null,
   foundedYear: null,
   locationTagline: null,
@@ -46,7 +46,7 @@ export const business = {
   shoppingUrl: process.env.NEXT_PUBLIC_SHOPPING_URL || "https://shop.aiflowerp.in/",
   appUrl: process.env.NEXT_PUBLIC_ERP_URL || "https://erp.aiflowerp.in/",
   headerCta: {
-    label: "Open KinnyCart ↗",
+    label: "Open kinny cart ↗",
     href: process.env.NEXT_PUBLIC_SHOPPING_URL || "https://shop.aiflowerp.in/",
   },
   socialLinks: {},

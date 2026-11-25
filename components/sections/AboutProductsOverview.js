@@ -67,7 +67,7 @@ export function AboutProductsOverview() {
           <div className="about-product-card is-kinny">
             <div className="about-card-badge is-kinny">DIGITAL COMMERCE</div>
             <h3 className="about-card-title is-kinny">
-              <BrandText text="KinnyCart" />
+              <BrandText text="kinny cart" />
             </h3>
             <p className="about-card-role">Local Commerce & Online Storefronts</p>
             <p className="about-card-desc">
@@ -77,7 +77,7 @@ export function AboutProductsOverview() {
               <li>✓ Turnkey merchant storefront launched in minutes</li>
               <li>✓ Global FMCG product catalogue with barcode taxonomies</li>
               <li>✓ Intuitive consumer cart and localized checkout</li>
-              <li>✓ Genuine Dark Mode & multilingual interface</li>
+              <li>✓ Verified Production UI with 390×844 mobile-first experience</li>
             </ul>
             <div className="about-card-cta">
               <a
@@ -86,7 +86,7 @@ export function AboutProductsOverview() {
                 rel="noopener noreferrer"
                 className="button button-kinny"
               >
-                Open <BrandText text="KinnyCart" /> ↗
+                Open <BrandText text="kinny cart" /> ↗
               </a>
             </div>
           </div>

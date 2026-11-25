@@ -3,11 +3,11 @@
  * PURPOSE:
  * Centralized rendering primitive for official brand wordmarks:
  * - 'ai flow' (strictly lowercase, bold, #2563EB enterprise blue)
- * - 'KinnyCart' (PascalCase without space, bold, #DC2626 retail red theme)
+ * - 'kinny cart' (strictly lowercase with space, bold, #059669 commerce green)
  *
  * RESPONSIBILITIES:
  * - Render 'ai flow' consistently in lowercase with blue brand wordmark styling
- * - Render 'KinnyCart' consistently in PascalCase without space and red commerce wordmark styling
+ * - Render 'kinny cart' consistently in lowercase with space and commerce green wordmark styling
  * - Maintain identical font weight and visual balance between both coordinated brand identities
  *
  * DEPENDENCIES:
@@ -42,7 +42,7 @@ export function BrandText({ text }) {
     ) {
       return (
         <span key={index} className="wordmark-kinny">
-          KinnyCart
+          kinny cart
         </span>
       );
     }
@@ -62,7 +62,7 @@ export function AiFlowWordmark({ suffix = "" }) {
 export function KinnyCartWordmark({ suffix = "" }) {
   return (
     <span className="wordmark-kinny">
-      KinnyCart{suffix ? ` ${suffix}` : ""}
+      kinny cart{suffix ? ` ${suffix}` : ""}
     </span>
   );
 }

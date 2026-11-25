@@ -53,13 +53,13 @@ export function Hero() {
     },
     {
       id: "kinny",
-      label: "KinnyCart",
+      label: "kinny cart",
       category: "Digital Commerce Platform",
-      image: home.heroShoppingImage || "/images/shopping/three-phones-showcase.png",
-      alt: "KinnyCart Mobile Shopping Application — 3 Smartphones",
+      image: home.heroShoppingImage || "/images/shopping/four-phones-showcase.png",
+      alt: "kinny cart Mobile Commerce Showcase — Welcome, Store Discovery, Catalogue, and Cart",
       url: business.shoppingUrl || "https://shop.aiflowerp.in/",
       tag: "Mobile-First Local Commerce",
-      ctaText: "Open KinnyCart ↗",
+      ctaText: "Open kinny cart ↗",
       isKinny: true,
     },
   ];
@@ -132,7 +132,7 @@ export function Hero() {
                 />
                 <span
                   className={`hero-status-dot is-kinny ${activeSystem === "kinny" ? "is-active" : ""}`}
-                  title="KinnyCart status"
+                  title="kinny cart status"
                 />
               </div>
 
@@ -161,7 +161,7 @@ export function Hero() {
               >
                 {currentSystem.id === "erp"
                   ? "Open ai flow ERP ↗"
-                  : "Open KinnyCart ↗"}
+                  : "Open kinny cart ↗"}
               </a>
             </div>
 
@@ -195,14 +195,7 @@ export function Hero() {
                 <div className="hero-caption-left">
                   {currentSystem.id === "kinny" ? (
                     <div className="hero-kinny-caption-brand">
-                      <Image
-                        src="/images/brands/kinnycart/kinnycart-logo-horizontal.png"
-                        alt="KinnyCart"
-                        width={116}
-                        height={34}
-                        className="hero-kinny-caption-logo"
-                      />
-                      <span className="hero-caption-tag">Mobile-First Commerce</span>
+                      <span className="hero-caption-tag is-kinny-red">Mobile-First Commerce</span>
                     </div>
                   ) : (
                     <>
@@ -218,7 +211,7 @@ export function Hero() {
                   className={`hero-caption-cta ${currentSystem.isKinny ? "is-kinny" : ""}`}
                 >
                   {currentSystem.id === "kinny" ? (
-                    "Open KinnyCart ↗"
+                    "Open kinny cart ↗"
                   ) : (
                     <BrandText text={currentSystem.ctaText} />
                   )}
