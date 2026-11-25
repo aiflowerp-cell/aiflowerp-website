@@ -54,3 +54,4 @@ scripts/test_ratio_crops/
 scripts/test_screen_crops/
 public/images/erp/original_source/
 public/images/erp/original_cropped_*.png
+.wrangler/
